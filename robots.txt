@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://roxaleh.ir/sitemap.xml
+Host: https://roxaleh.ir
