@@ -31,7 +31,7 @@ const Header = () => {
         <div className={`${style.hamburger} ${menu ? style.menuIcon : null}`}>
           <div className={style.line} />
           <div className={style.line} />
-          <div className={style.hamburgerText}>MENU</div>
+          <div className={style.hamburgerText}>منو</div>
         </div>
       </div>
       <Layout
