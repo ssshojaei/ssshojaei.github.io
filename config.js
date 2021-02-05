@@ -6,8 +6,7 @@ module.exports = {
   author: 'سید صالح شجاعی',
   postsForArchivePage: 3,
   defaultLanguage: 'fa',
-  disqusScript:
-    process.env.DISQUS_SCRIPT || 'https://rolwinreevan.disqus.com/embed.js',
+  disqusScript: process.env.DISQUS_SCRIPT || '',
   pages: {
     home: '/',
     blog: 'blog',
@@ -22,9 +21,7 @@ module.exports = {
     instagram: 'https://www.instagram.com/roxaleh/',
     rss: '/rss.xml',
   },
-  contactFormUrl:
-    process.env.CONTACT_FORM_ENDPOINT ||
-    'https://getform.io/f/14e20510-b91b-412a-ab64-07c6512d5d30',
+  contactFormUrl: process.env.CONTACT_FORM_ENDPOINT,
   googleAnalyticTrackingId: process.env.GA_TRACKING_ID || '',
   tags: {
     programming: {
@@ -53,22 +50,19 @@ module.exports = {
     },
     vegan: {
       name: 'گیاه‌خواری',
-      description:
-        `شش هزار و چهارصد قرن برای فهمیدن
+      description: `شش هزار و چهارصد قرن برای فهمیدن
         خروج از این چرخه بجای پوسیدن`,
       color: '#86cd00',
     },
     linux: {
       name: 'لینوکس',
-      description:
-        `ترفندهایی خفن و برنامه‌هایی کاربردی برای گنو/لینوکس زیبا`,
+      description: `ترفندهایی خفن و برنامه‌هایی کاربردی برای گنو/لینوکس زیبا`,
       color: '#ffc764',
     },
     introduce: {
       name: 'معرفی',
-      description:
-        `معرفی فیلم و سریال، موزیک و کتاب خوب، آدم‌های جالب یا حتی نرم‌افزارهای کاربردی`,
+      description: `معرفی فیلم و سریال، موزیک و کتاب خوب، آدم‌های جالب یا حتی نرم‌افزارهای کاربردی`,
       color: '#a685e2',
-    }
+    },
   },
 }
