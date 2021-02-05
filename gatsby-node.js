@@ -55,9 +55,6 @@ exports.createPages = ({ actions, graphql }) => {
     /* Tag pages */
     const allTags = []
     defaultPosts.forEach(({ node }) => {
-      console.log('========= TAGS =========')
-      console.log('Node', node)
-      console.log('========= TAGS =========')
       node.frontmatter.tags.forEach(tag => {
         if (allTags.indexOf(tag) === -1) allTags.push(tag)
       })
