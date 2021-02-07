@@ -21,7 +21,7 @@ module.exports = {
     instagram: 'https://www.instagram.com/roxaleh/',
     rss: '/rss.xml',
   },
-  contactFormUrl: process.env.CONTACT_FORM_ENDPOINT,
+  contactFormUrl: process.env.CONTACT_FORM_ENDPOINT || '',
   googleAnalyticTrackingId: process.env.GA_TRACKING_ID || '',
   tags: {
     programming: {

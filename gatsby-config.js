@@ -4,8 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const config = require('./config');
-const plugins = require('./gatsby-config.plugins');
+const config = require('./config')
+const plugins = require('./gatsby-config.plugins').default
 
 module.exports = {
   pathPrefix: config.pathPrefix,
@@ -16,4 +16,4 @@ module.exports = {
     description: config.siteDescription,
   },
   plugins,
-};
+}

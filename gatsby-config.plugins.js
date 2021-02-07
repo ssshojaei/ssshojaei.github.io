@@ -1,6 +1,15 @@
-const config = require('./config')
+import { defaultLanguage } from './config'
 
-module.exports = [
+export default [
+  {
+    resolve: 'gatsby-plugin-google-analytics',
+    options: {
+      // The property ID; the tracking code won't be generated without it
+      trackingId: 'G-05B5J0EQ45',
+      // Defines where to place the tracking script - `true` in the head and `false` in the body
+      head: false,
+    },
+  },
   'gatsby-plugin-react-helmet',
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
@@ -60,7 +69,7 @@ module.exports = [
   {
     resolve: 'gatsby-plugin-i18n',
     options: {
-      langKeyDefault: config.defaultLanguage,
+      langKeyDefault: defaultLanguage,
       useLangKeyLayout: false,
     },
   },
@@ -84,15 +93,6 @@ module.exports = [
       },
     },
   },
-  // {
-  //   resolve: 'gatsby-plugin-google-analytics',
-  //   options: {
-  //     // The property ID; the tracking code won't be generated without it
-  //     trackingId: config.googleAnalyticTrackingId,
-  //     // Defines where to place the tracking script - `true` in the head and `false` in the body
-  //     head: false,
-  //   },
-  // },
   {
     resolve: 'gatsby-plugin-nprogress',
     options: {
@@ -101,5 +101,5 @@ module.exports = [
       // Disable the loading spinner.
       showSpinner: true,
     },
-  },
+  }
 ]
