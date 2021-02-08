@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { globalHistory } from '@reach/router'
 import { Affix, Col, Layout, Row } from 'antd'
 import FeatherIcon from 'feather-icons-react'
