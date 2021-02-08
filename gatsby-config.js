@@ -5,7 +5,7 @@
  */
 
 const config = require('./config')
-const plugins = require('./gatsby-config.plugins').default
+const plugins = require('./gatsby-config.plugins')
 
 module.exports = {
   pathPrefix: config.pathPrefix,

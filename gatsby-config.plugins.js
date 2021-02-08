@@ -1,15 +1,6 @@
-import { defaultLanguage } from './config'
+const config = require('./config')
 
-export default [
-  {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      // The property ID; the tracking code won't be generated without it
-      trackingId: 'G-05B5J0EQ45',
-      // Defines where to place the tracking script - `true` in the head and `false` in the body
-      head: false,
-    },
-  },
+module.exports = [
   'gatsby-plugin-react-helmet',
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
@@ -69,7 +60,7 @@ export default [
   {
     resolve: 'gatsby-plugin-i18n',
     options: {
-      langKeyDefault: defaultLanguage,
+      langKeyDefault: config.defaultLanguage,
       useLangKeyLayout: false,
     },
   },
@@ -93,6 +84,15 @@ export default [
       },
     },
   },
+  // {
+  //   resolve: 'gatsby-plugin-google-analytics',
+  //   options: {
+  //     // The property ID; the tracking code won't be generated without it
+  //     trackingId: config.googleAnalyticTrackingId,
+  //     // Defines where to place the tracking script - `true` in the head and `false` in the body
+  //     head: false,
+  //   },
+  // },
   {
     resolve: 'gatsby-plugin-nprogress',
     options: {
@@ -101,5 +101,22 @@ export default [
       // Disable the loading spinner.
       showSpinner: true,
     },
-  }
+  },
+  {
+    resolve: 'gatsby-transformer-remark',
+    options: {
+      plugins: [
+        {
+          resolve: 'gatsby-remark-audio',
+          options: {
+            preload: 'auto',
+            loop: false,
+            controls: true,
+            muted: false,
+            autoplay: false,
+          },
+        },
+      ],
+    },
+  },
 ]
