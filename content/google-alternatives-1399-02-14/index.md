@@ -24,31 +24,31 @@ excerpt: توی این قسمت میخوایم درمورد جایگزین کر�
 *   نداشتن کشور ایران توی لیست منطقه‌هاش
 *   **فیلتر بودن!** (مشکل داک‌داک‌گو نیست ولی تاثیر زیادی روی ما داره)
 
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-18-18-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-18-18-1024x578.png)
     
     نمایش آب و هوا
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-15-23-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-15-23-1024x578.png)
     
     ماشین حساب
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-12-22-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-12-22-1024x578.png)
     
     جست‌وجوی خوب ویدیو
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-12-12-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-12-12-1024x578.png)
     
     نبودن جعبه توضیحات ویکی‌پدیا برای جست‌وجوی فارسی
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-12-03-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-12-03-1024x578.png)
     
     جعبه‌ی توضیحات ویکی‌پدیا
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-10-15-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-10-15-1024x578.png)
     
     تنظیمات
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-09-28-1024x578.png)
+*   ![](./Screenshot-from-2020-05-03-18-09-28-1024x578.png)
     
     صفحه‌ی اصلی داک‌داک‌گو
     
@@ -66,19 +66,19 @@ excerpt: توی این قسمت میخوایم درمورد جایگزین کر�
 *   کارهای شما رو رهگیری نمیکنه
 *   **فیلتر نیست**
 
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-31-53-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-18-31-53-1024x555.png)
     
     ظاهر حرفه‌ای و باکس ویکی پدیا
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-42-21-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-18-42-21-1024x555.png)
     
     جست‌وجوی تصاویر فارسی
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-43-52-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-18-43-52-1024x555.png)
     
     جست‌وجوی افراد مشهور
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-18-31-13-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-18-31-13-1024x555.png)
     
     صفحه‌ی اصلی
     
@@ -101,19 +101,19 @@ excerpt: توی این قسمت میخوایم درمورد جایگزین کر�
 *   رهگیری نکردن کارهای شما
 *   ظاهر خیره نکننده
 
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-19-09-37-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-19-09-37-1024x555.png)
     
     تنظیمات
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-19-08-53-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-19-08-53-1024x555.png)
     
     جست‌وجوی تصاویر
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-19-01-09-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-19-01-09-1024x555.png)
     
     جست‌وجوی فارسی
     
-*   ![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-19-00-58-1024x555.png)
+*   ![](./Screenshot-from-2020-05-03-19-00-58-1024x555.png)
     
     صفحه‌ی اصلی
     
@@ -122,7 +122,7 @@ excerpt: توی این قسمت میخوایم درمورد جایگزین کر�
 
     https://searx.be/search?q=%s
 
-![](https://wp.roxaleh.ir/wp-content/uploads/2020/05/Screenshot-from-2020-05-03-20-43-22-1024x578.png)
+![](./Screenshot-from-2020-05-03-20-43-22-1024x578.png)
 
 [chrome://settings/searchEngines](//settings/searchEngines)
 
