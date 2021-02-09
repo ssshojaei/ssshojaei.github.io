@@ -48,6 +48,16 @@ module.exports = [
           },
         },
         {
+          resolve: 'gatsby-remark-audio',
+          options: {
+            preload: 'auto',
+            loop: false,
+            controls: true,
+            muted: false,
+            autoplay: false,
+          },
+        },
+        {
           resolve: 'gatsby-remark-external-links',
           options: {
             rel: 'nofollow',
@@ -100,29 +110,6 @@ module.exports = [
       color: 'black',
       // Disable the loading spinner.
       showSpinner: true,
-    },
-  },
-  {
-    resolve: 'gatsby-transformer-remark',
-    options: {
-      plugins: [
-        {
-          resolve: 'gatsby-remark-audio',
-          options: {
-            preload: 'auto',
-            loop: false,
-            controls: true,
-            muted: false,
-            autoplay: false,
-          },
-        },
-      ],
-    },
-  },
-  {
-    resolve: 'gatsby-transformer-remark',
-    options: {
-      plugins: ['gatsby-remark-responsive-iframe'],
     },
   },
 ]
