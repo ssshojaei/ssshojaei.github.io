@@ -1,7 +1,7 @@
 ---
 title: "افزونه های کاربردی VSCode برای فول‌استک‌ها"
 path: blog/vscode-extensions
-tags: [vegan]
+tags: [programming, introduce]
 cover: ./cover.jpg
 date: 1399-03-16
 excerpt: ویرایشگر VSCode توی سال‌های اخیر به یکی از محبوب‌ترین و پر کاربرترین ویرایشگرهای بین توسعه‌دهنده ها تبدیل شده
