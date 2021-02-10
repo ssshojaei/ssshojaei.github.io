@@ -101,7 +101,7 @@ excerpt: معرفی افزونه‌ی های پر کاربرد گنوم شل ب�
 --------------------------
 
 پاپ‌شل هم بسیار خفن تشریف دارن، درموردش توی یه پست و ویدیوی جدا از پیش توضیح دادم.  
-[https://roxaleh.ir/blog/post/pop-shell](https://roxaleh.ir/blog/post/pop-shell)
+[pop-shell](/blog/pop-shell)
 
 [نصب Pop Shell](https://github.com/pop-os/shell#installation)
 

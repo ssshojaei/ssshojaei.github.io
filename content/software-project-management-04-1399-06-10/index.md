@@ -13,9 +13,9 @@ excerpt: شرکت اول بعد از چند ماه کار کردن زدم بیر
 
 اگر قسمت‌های قبلی رو نخوندید، این داستان احتمالا دنباله‌ی اونا باید باشه، بهتره یه سر به قبلی ها بزنید
 
-*   [قسمت ۱](https://roxaleh.ir/blog/post/software-project-management)
-*   [قسمت ۲](https://ssshojaei.ir/blog/post/experiences-programmer)
-*   [قسمت](https://ssshojaei.ir/blog/post/going-out-going-forward) [](https://roxaleh.ir/blog/post/going-out-going-forward) [۳](https://ssshojaei.ir/blog/post/going-out-going-forward)
+*   [قسمت ۱](/blog/software-project-management-01)
+*   [قسمت ۲](/blog/software-project-management-02)
+*   [قسمت ۳](/blog/software-project-management-03)
 
 شرکت دوم:
 ---------

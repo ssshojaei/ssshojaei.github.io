@@ -217,6 +217,6 @@ excerpt: رادیو باصالح از دید من شبیه باقی پادکست
 
 [جملات هادی پاکزاد](https://fa.wikiquote.org/wiki/%D9%87%D8%A7%D8%AF%DB%8C_%D9%BE%D8%A7%DA%A9%D8%B2%D8%A7%D8%AF)
 
-[معرفی هادی پاکزاد](https://ssshojaei.ir/blog/post/%D9%87%D8%A7%D8%AF%DB%8C-%D9%BE%D8%A7%DA%A9%D8%B2%D8%A7%D8%AF/94)
+[معرفی هادی پاکزاد](/blog/hadi-pakzad)
 
 [کتاب اهالی ۹ از هادی پاکزاد](https://shahreketabonline.com/products/64/173434/%D8%A7%D9%87%D8%A7%D9%84%DB%8C_%D9%86%D9%87)
