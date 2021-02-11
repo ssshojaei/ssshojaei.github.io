@@ -39,17 +39,7 @@ const Post = ({
           title={title}
           description={excerpt}
           path={path}
-          keywords={[
-            'Rolwin',
-            'Reevan',
-            'Monteiro',
-            'FullStack developer',
-            'Javascript',
-            'ReactJS',
-            'NodeJS',
-            'Gatsby',
-            'technology',
-          ]}
+          keywords={Config.keywords}
         />
         <Header />
         <SidebarWrapper>
@@ -67,7 +57,11 @@ const Post = ({
               className={style.blogArticle}
               dangerouslySetInnerHTML={{ __html: html }}
             />
-            <Comment pageCanonicalUrl={canonicalUrl} pageId={title} />
+            <Comment
+              pageCanonicalUrl={canonicalUrl}
+              title={title}
+              path={path}
+            />
           </div>
         </SidebarWrapper>
       </Layout>

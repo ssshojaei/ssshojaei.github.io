@@ -2,13 +2,13 @@ import { Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const Comments = ({ pageCanonicalUrl, pageId, page }) => {
+const Comments = ({ pageCanonicalUrl, title, path }) => {
   return (
     <Disqus
       config={{
         url: pageCanonicalUrl,
-        identifier: pageId,
-        title: page,
+        identifier: path,
+        title: title,
       }}
     />
   )
@@ -16,8 +16,8 @@ const Comments = ({ pageCanonicalUrl, pageId, page }) => {
 
 Comments.propTypes = {
   pageCanonicalUrl: PropTypes.string.isRequired,
-  pageId: PropTypes.string.isRequired,
-  page: PropTypes.any,
+  title: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 }
 
 export default Comments

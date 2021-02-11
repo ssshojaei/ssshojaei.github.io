@@ -6,7 +6,16 @@ module.exports = {
   author: 'سید صالح شجاعی',
   postsForArchivePage: 3,
   defaultLanguage: 'fa',
-  disqusScript: process.env.DISQUS_SCRIPT || '',
+  keywords: [
+    'برنامه نویسی',
+    'سید صالح شجاعی',
+    'رکساله',
+    'roxaleh',
+    'جاوااسکریپت',
+    'با صالح',
+    'ssshojaei',
+    'صالح شجاعی',
+  ],
   pages: {
     home: '/',
     blog: 'blog',
