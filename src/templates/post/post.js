@@ -41,7 +41,7 @@ const Post = ({
           description={excerpt}
           path={path}
           keywords={Config.keywords}
-          imageUrl={`${Config.siteUrl}/${fluid.src}`}
+          imageUrl={fluid.src}
         />
         <Header />
         <SidebarWrapper>
