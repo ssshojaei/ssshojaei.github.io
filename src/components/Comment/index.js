@@ -1,21 +1,16 @@
-import { Disqus } from 'gatsby-plugin-disqus'
+import { DiscussionEmbed } from 'disqus-react'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const Comments = ({ pageCanonicalUrl, title, path }) => {
-  return (
-    <Disqus
-      config={{
-        url: pageCanonicalUrl,
-        identifier: path,
-        title: title,
-      }}
-    />
-  )
+const Comments = ({ title, path }) => {
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: path, title },
+  }
+  return <DiscussionEmbed {...disqusConfig} />
 }
 
 Comments.propTypes = {
-  pageCanonicalUrl: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
 }

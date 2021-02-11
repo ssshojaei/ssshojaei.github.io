@@ -32,6 +32,7 @@ const Post = ({
     Config.pathPrefix,
     path
   )
+
   return (
     <Layout className="outerPadding">
       <Layout className="container">
@@ -40,6 +41,7 @@ const Post = ({
           description={excerpt}
           path={path}
           keywords={Config.keywords}
+          imageUrl={`${Config.siteUrl}/${fluid.src}`}
         />
         <Header />
         <SidebarWrapper>

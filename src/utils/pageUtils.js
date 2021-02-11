@@ -7,18 +7,20 @@ const Utils = {
    * @param {...string} paths Provided paths. It doesn't matter if they have trailing slash.
    * @return {string} Resolved url without trailing slash.
    */
-  resolveUrl: (...paths) =>
-    paths.reduce((resolvedUrl, path) => {
-      const urlPath = path.toString().trim()
-      if (urlPath) {
-        // eslint-disable-next-line no-param-reassign
-        resolvedUrl +=
-          (resolvedUrl === '' ? '' : '/') + urlPath.replace(/^\/|\/$/g, '')
-      }
+  resolveUrl: (...paths) => {
+    return paths.join('')
+    // paths.reduce((resolvedUrl, path) => {
+    //   const urlPath = path.toString().trim()
+    //   if (urlPath) {
+    //     // eslint-disable-next-line no-param-reassign
+    //     resolvedUrl +=
+    //       (resolvedUrl === '' ? '' : '/') + urlPath.replace(/^\/|\/$/g, '')
+    //   }
 
-      resolvedUrl = resolvedUrl[0] !== '/' ? `/${resolvedUrl}` : resolvedUrl
-      return resolvedUrl
-    }, ''),
+    //   resolvedUrl = resolvedUrl[0] !== '/' ? `/${resolvedUrl}` : resolvedUrl
+    //   return resolvedUrl
+    // }, ''),
+  },
   /**
    * Resolve a page url adding a trailing slash.
    * Needed to prevent 301 redirects cause of Gatsby.js' folder structure.
