@@ -1,6 +1,6 @@
 module.exports = {
   pathPrefix: '',
-  siteUrl: 'https://roxaleh.ir',
+  siteUrl: 'https://ssshojaei.github.io',
   siteTitle: 'سید صالح شجاعی',
   siteDescription: 'بلاگ شخصی سید صالح شجاعی',
   author: 'سید صالح شجاعی',
@@ -31,7 +31,6 @@ module.exports = {
     rss: '/rss.xml',
   },
   contactFormUrl: process.env.CONTACT_FORM_ENDPOINT || '',
-  googleAnalyticTrackingId: process.env.GA_TRACKING_ID || '',
   tags: {
     programming: {
       name: 'برنامه نویسی',
