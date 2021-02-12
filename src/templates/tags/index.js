@@ -18,6 +18,7 @@ const TagPage = ({ data, pageContext }) => {
   const tagImage = data.allFile.edges.find(edge => edge.node.name === tag).node
     .childImageSharp.fluid
   const posts = data.allMarkdownRemark.edges
+
   return (
     <Layout className="outerPadding">
       <Layout className="container">
@@ -25,7 +26,7 @@ const TagPage = ({ data, pageContext }) => {
         <SEO
           title={tagName}
           description={`تمام پست‌های ${tagName}. ${Config.tags[tag].description} `}
-          path={Utils.resolvePageUrl(tagPagePath, tag)}
+          path={`/${tagPagePath}/${tag}`}
           keywords={[tagName]}
         />
         <SidebarWrapper>

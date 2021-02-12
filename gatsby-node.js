@@ -62,7 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
 
     allTags.forEach(tag => {
       createPage({
-        path: utils.resolvePageUrl(config.pages.tag, tag),
+        path: `/${config.pages.tag}/${tag}`,
         component: path.resolve('src/templates/tags/index.js'),
         context: {
           tag,

@@ -2,13 +2,13 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Config from '../../../config'
-import Utils from '../../utils/pageUtils'
 import style from './tags.module.less'
 
 const TagCard = ({ img, name, link, description, color }) => {
   const tagPage = Config.pages.tag
+
   return (
-    <Link className={style.tagCard} to={Utils.resolvePageUrl(tagPage, link)}>
+    <Link className={style.tagCard} to={`/${tagPage}/${link}`}>
       <div className={style.tagCard}>
         <div
           className={style.tagImg}
