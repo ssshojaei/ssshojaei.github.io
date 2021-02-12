@@ -41,6 +41,7 @@ const SEO = ({
         Config.pathPrefix,
         path
       )
+
       const metaImageUrl = Utils.resolveUrl(
         Config.siteUrl,
         imageUrl || data.file.childImageSharp.fixed.src
