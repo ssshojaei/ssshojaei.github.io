@@ -1,7 +1,7 @@
 ---
 title: "مصاحبه‌ی استخدام برنامه‌نویس"
 path: blog/hire-as-a-programmer
-tags: [society, introduce]
+tags: [work]
 cover: ./cover.jpg
 date: 1399-11-10
 excerpt: تجربه‌های من از بیش از ۴ سال مصاحبه

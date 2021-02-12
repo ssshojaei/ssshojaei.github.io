@@ -1,7 +1,7 @@
 ---
 title: "بوسه – اپیزود ۱"
 path: blog/kiss-episode-1
-tags: [society, introduce]
+tags: [podcast]
 cover: ./cover.jpg
 date: 1399-01-25
 excerpt: رادیو باصالح از دید من شبیه باقی پادکست‌هایی که من میشنوم نیست

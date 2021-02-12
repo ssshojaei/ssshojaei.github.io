@@ -1,7 +1,7 @@
 ---
 title: "روز پادکسترها شادباش!"
 path: blog/international-podcast-day
-tags: [society, introduce]
+tags: [introduce, podcast]
 cover: ./cover.jpg
 date: 1399-07-09
 excerpt: زنده باد زمان مُرده

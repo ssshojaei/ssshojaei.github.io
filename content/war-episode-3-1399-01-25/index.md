@@ -1,7 +1,7 @@
 ---
 title: "جنگ – اپیزود ۳"
 path: blog/war-episode-3
-tags: [society, introduce]
+tags: [podcast]
 cover: ./cover.jpg
 date: 1399-01-25
 excerpt: آدمیم دیگر! عادت می‌کنیم به همه چیز، حتی جنگ! عادت می‌کنیم که چشم ببندیم روی همسایگی و رفاقت و با هرچیزی که به دستمان رسید همدیگر را از بین ببریم

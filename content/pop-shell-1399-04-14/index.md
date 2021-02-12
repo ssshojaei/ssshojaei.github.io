@@ -6,6 +6,7 @@ cover: ./cover.jpg
 date: 1399-04-14
 excerpt: توی این نوشته می‌خوایم یکی از ابزارهای زیبای PopOS رو نصب کنیم و لذت ببریم ازش. توی نسخه‌ی 20.04 این توزیع، ابزار جذاب PopShell اضافه شده که خیلی توی مدیریت پنجره‌ها و تقسیم فضا بینشون کمک کننده هست، توی ویدیوی پایین عملکردش رو بررسی میکنیم.
 ---
+
 توی این نوشته می‌خوایم یکی از ابزارهای زیبای PopOS رو نصب کنیم و لذت ببریم ازش. توی نسخه‌ی 20.04 این توزیع، ابزار جذاب PopShell اضافه شده که خیلی توی مدیریت پنجره‌ها و تقسیم فضا بینشون کمک کننده هست، توی ویدیوی پایین عملکردش رو بررسی میکنیم.
 
 <style>.h_iframe-aparat_embed_frame{position:relative;}.h_iframe-aparat_embed_frame .ratio{display:block;width:100%;height:auto;}.h_iframe-aparat_embed_frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="h_iframe-aparat_embed_frame"><span style="display: block;padding-top: 57%"></span><iframe src="https://www.aparat.com/video/video/embed/videohash/kEBmC/vt/frame" title="پوسته رو بشکن! گنوم شل با پنجره‌هایی رو به طلوع" allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe></div>

@@ -1,7 +1,7 @@
 ---
 title: "بازه‌ی اشتیاق – اپیزود ۲"
 path: blog/passion-episode-2
-tags: [society, introduce]
+tags: [podcast]
 cover: ./cover.jpg
 date: 1399-01-24
 excerpt: بدون شک جز تلخ ترین حس های دنیا ،به دست آوردن خواسته ت بعد از بازه ی اشتیاق و انتظارته

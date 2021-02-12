@@ -1,7 +1,7 @@
 ---
 title: "نامساوی – اپیزود ۵"
 path: blog/not-equal-episode-5
-tags: [society, introduce]
+tags: [podcast]
 cover: ./cover.jpg
 date: 1399-01-25
 excerpt: سلام، امیدوارم صدای ما را از پس دیوارهای بلند این زندان بزرگ بشنوید…
