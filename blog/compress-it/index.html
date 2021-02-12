@@ -7,7 +7,7 @@
 /static/fd47883d4c7e239455e04ea6b56a4158/0f3a1/cover.jpg 500w,
 /static/fd47883d4c7e239455e04ea6b56a4158/33aa5/cover.jpg 768w" sizes="(max-width: 768px) 100vw, 768px" /><img loading="lazy" sizes="(max-width: 768px) 100vw, 768px" srcset="/static/fd47883d4c7e239455e04ea6b56a4158/8f7df/cover.jpg 250w,
 /static/fd47883d4c7e239455e04ea6b56a4158/0f3a1/cover.jpg 500w,
-/static/fd47883d4c7e239455e04ea6b56a4158/33aa5/cover.jpg 768w" src="/static/fd47883d4c7e239455e04ea6b56a4158/33aa5/cover.jpg" alt="فشارش بده!" title="فشرده کردن فیلم‌ها و تصاویر برای وب" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><article class="post-module--blogArticle--1Ro02"><p>چند بار دوستان درمورد حجم ویدیوهایی که توی <a href="https://t.me/roxaleh" target="_blank" rel="nofollow">کانال تلگرامم</a> گذاشتن پرسیدن ازم که چطوری با اینکه زمانشون بالاست ولی حجمشون اینقدر پایینه! گفتم اینجا توضیح بدم که چطوری ویدیوها و تصاویر رو برای انتشار روی وب آماده کنیم و حجمشون رو به پایین ترین حالت ممکنن با حفظ کیفیت برسونیم.</p>
+/static/fd47883d4c7e239455e04ea6b56a4158/33aa5/cover.jpg 768w" src="/static/fd47883d4c7e239455e04ea6b56a4158/33aa5/cover.jpg" alt="فشارش بده!" title="فشرده کردن فیلم‌ها و تصاویر برای وب" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></div><article class="post-module--blogArticle--1Ro02"><p>چند بار دوستان درمورد حجم ویدیوهایی که توی <a href="https://t.me/roxaleh" target="_blank" rel="nofollow">کانال تلگرامم</a> گذاشتم پرسیدن ازم که چطوری با اینکه زمانشون بالاست ولی حجمشون اینقدر پایینه! گفتم اینجا توضیح بدم که چطوری ویدیوها و تصاویر رو برای انتشار روی وب آماده کنیم و حجمشون رو به پایین ترین حالت ممکنن با حفظ کیفیت برسونیم.</p>
 <h1>کاهش حجم ویدیو</h1>
 <p>یکی از معروف ترین و خفن ترین ابزارهای کار کردن با ویدیوها و در کل media، برنامه‌ی خفنی به اسم ffmpeg هست. بعید میدونم کاری بخواید با فایل های چندرسانه‌ای بکنید و ناامیدتون کنه. از چسبودن زیرنویس و دوبله به فیلم گرفته تا جدا کردن فایل صوتی از ویدیو و تغییر فریم و خلاصه هر کاری که بخواین رو انجام میده، من اما اینجا تنها درمورد کم کردن حجم ویدیو با ffmpeg بهتون میگم</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">ffmpeg -i <span class="token string">"inputFile.mkv"</span> -vcodec h264 -acodec aac <span class="token string">"outputFile.mp4"</span></code></pre></div>
@@ -56,7 +56,7 @@ jpegoptim *.jpg
 
 <span class="token comment">## تمام تصاویر داخل این پوشه و پوشه‌های زیر مجموعه</span>
 <span class="token function">find</span> <span class="token builtin class-name">.</span> -type f <span class="token punctuation">\</span><span class="token punctuation">(</span> -iname <span class="token string">"*.jpg"</span> -o -iname <span class="token string">"*.jpeg"</span> <span class="token punctuation">\</span><span class="token punctuation">)</span> -exec jpegoptim -f --strip-all <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span></code></pre></div>
-<h2>jpegoptim:</h2>
+<h2>optipng:</h2>
 <p>نصب</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> optipng</code></pre></div>
 <p>استفاده</p>
