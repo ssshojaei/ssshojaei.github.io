@@ -2,7 +2,6 @@ import { Link } from 'gatsby'
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Utils from '../../utils/pageUtils'
 import style from './postCard.module.less'
 
 const PostCard = ({
@@ -12,7 +11,7 @@ const PostCard = ({
 }) => {
   return (
     <div className={style.postCard}>
-      <Link to={Utils.resolvePageUrl(frontmatter.path)}>
+      <Link to={`/${frontmatter.path}`}>
         <div
           className={style.postCardImg}
           style={{
