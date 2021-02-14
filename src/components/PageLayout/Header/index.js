@@ -8,17 +8,11 @@ import style from './header.module.less'
 
 const Header = () => {
   const [menu, setMenu] = useState(false)
-
   const [width] = useWindowSize()
-  const toggleMenu = () => {
-    if (width !== 0 && width <= 768) {
-      if (menu) {
-        setMenu(false)
-      } else {
-        setMenu(true)
-      }
-    }
-  }
+
+  const toggleMenu = () =>
+    width !== 0 && width <= 768 && setMenu(menu ? false : true)
+
   return (
     <>
       <div
@@ -35,9 +29,9 @@ const Header = () => {
         </div>
       </div>
       <Layout
-        className={`${style.navWrap} ${menu ? null : style.hidden} ${
-          menu ? style.openMenu : null
-        }`}
+        className={`
+        ${style.navWrap}
+        ${!menu && style.hidden} ${menu && style.openMenu}`}
       >
         <div className={style.backgroundDiv}>
           <ul className={style.nav}>
