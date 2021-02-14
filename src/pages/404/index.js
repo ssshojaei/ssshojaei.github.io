@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Header from '../../components/PageLayout/Header'
-import { Sidebar404 } from '../../components/PageLayout/Sidebar'
+import Sidebar404 from '../../components/PageLayout/Sidebar/Sidebar404'
 import style from './404.module.less'
 
 export const query = graphql`
