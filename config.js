@@ -28,6 +28,7 @@ module.exports = {
     telegram: 'https://t.me/roxaleh/',
     twitter: 'https://twitter.com/shojaeisaleh/',
     instagram: 'https://www.instagram.com/roxaleh/',
+    linkedin: 'https://www.linkedin.com/in/ordinarysaleh/',
     rss: '/rss.xml',
   },
   contactFormUrl: process.env.CONTACT_FORM_ENDPOINT || '',

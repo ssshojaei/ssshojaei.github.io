@@ -1,10 +1,17 @@
+import {
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
+  faTelegramPlane,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import FeatherIcon from 'feather-icons-react'
 import React from 'react'
-import FA from 'react-fontawesome'
 import Config from '../../../../config'
 import style from './sidebar.module.less'
 
-const { telegram, github, instagram, twitter } = Config.social
+const { telegram, github, instagram, twitter, linkedin } = Config.social
 
 const DomContent = () => (
   <aside>
@@ -25,7 +32,15 @@ const DomContent = () => (
           label="button"
           rel="noopener noreferrer"
         >
-          <FA name="telegram" />
+          <FontAwesomeIcon className="fa" icon={faTelegramPlane} />
+        </a>
+        <a
+          href={linkedin}
+          target="_blank"
+          label="button"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon className="fa" icon={faLinkedinIn} />
         </a>
         <a
           href={twitter}
@@ -33,7 +48,7 @@ const DomContent = () => (
           label="button"
           rel="noopener noreferrer"
         >
-          <FA name="twitter" />
+          <FontAwesomeIcon className="fa" icon={faTwitter} />
         </a>
         <a
           href={github}
@@ -41,7 +56,7 @@ const DomContent = () => (
           label="button"
           rel="noopener noreferrer"
         >
-          <FA name="github" />
+          <FontAwesomeIcon className="fa" icon={faGithub} />
         </a>
         <a
           href={instagram}
@@ -49,7 +64,7 @@ const DomContent = () => (
           label="button"
           rel="noopener noreferrer"
         >
-          <FA name="instagram" />
+          <FontAwesomeIcon className="fa" icon={faInstagram} />
         </a>
       </div>
       <ul className={`box ${style.badge} contactBlock`}>

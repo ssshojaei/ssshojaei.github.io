@@ -15,6 +15,9 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "antd": "^4.12.2",
     "disqus-react": "^1.0.11",
     "feather-icons-react": "^0.4.3",
@@ -45,7 +48,6 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-fontawesome": "^1.7.1",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
