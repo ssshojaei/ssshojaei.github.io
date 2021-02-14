@@ -20,8 +20,6 @@ const HTML = ({
         />
         <link
           rel="stylesheet"
-          media="print"
-          onLoad="this.onload=null;this.removeAttribute('media');"
           href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.1/dist/font-face.css"
         />
         {headComponents}
