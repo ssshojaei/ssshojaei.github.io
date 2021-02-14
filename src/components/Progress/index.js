@@ -2,11 +2,11 @@ import { Progress } from 'antd'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const ProgressBar = ({ text, percent }) => {
+const ProgressBar = ({ text = '', percent = 0 }) => {
   return (
     <div style={{ marginTop: '20px' }}>
       <div>
-        <Progress percent={percent || 0} strokeWidth={22} status="active" />
+        <Progress percent={percent} strokeWidth={22} status="active" />
       </div>
       <div
         style={{
@@ -17,7 +17,7 @@ const ProgressBar = ({ text, percent }) => {
           fontSize: '13px',
         }}
       >
-        <span>{text || ''}</span>
+        <span>{text}</span>
       </div>
     </div>
   )

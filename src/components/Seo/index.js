@@ -22,12 +22,12 @@ const SEO = ({
   title,
   description,
   path,
-  lang,
+  lang = 'en_US',
   keywords,
-  contentType,
+  contentType = 'website',
   imageUrl,
   translations,
-  meta,
+  meta = [],
 }) => (
   <StaticQuery
     query={detailsQuery}
@@ -55,13 +55,13 @@ const SEO = ({
             { name: 'description', content: description }, // Page description
             /* Open Graph */
             { property: 'og:title', content: title },
-            { property: 'og:type', content: contentType || 'website' },
+            { property: 'og:type', content: contentType },
             { property: 'og:url', content: pageUrl },
             { property: 'og:description', content: description },
             { property: 'og:image', content: metaImageUrl },
             { property: 'og:image:alt', content: description },
             { property: 'og:site_name', content: Config.siteTitle },
-            { property: 'og:locale', content: lang || 'en_US' },
+            { property: 'og:locale', content: lang },
             /* Twitter card */
             { name: 'twitter:card', content: 'summary_large_image' },
             { name: 'twitter:title', content: title },
@@ -72,7 +72,7 @@ const SEO = ({
             { name: 'twitter:creator', content: Config.author },
           ]
             .concat(metaKeywords)
-            .concat(meta || [])}
+            .concat(meta)}
           link={[
             { rel: 'canonical', href: pageUrl }, // Canonical url
           ].concat(
