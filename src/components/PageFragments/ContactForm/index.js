@@ -11,6 +11,7 @@ const validateMessages = {
 
 const ContactForm = () => {
   const [form] = Form.useForm()
+
   const onFinish = data => {
     const formData = new FormData()
     for (const key in data) {
@@ -24,7 +25,6 @@ const ContactForm = () => {
         message.success('سپاس بابت ارسال پیامتون 🙂، به زودی بهتون پاسخ میدم')
         form.resetFields()
       })
-      // eslint-disable-next-line no-console
       .catch(error => console.error('Error:', error))
   }
 
