@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* Vendor imports */
 import { graphql, StaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
@@ -73,9 +74,7 @@ const SEO = ({
           ]
             .concat(metaKeywords)
             .concat(meta)}
-          link={[
-            { rel: 'canonical', href: pageUrl }, // Canonical url
-          ].concat(
+          link={[{ rel: 'canonical', href: pageUrl }].concat(
             translations
               ? translations.map(obj => ({
                   rel: 'alternate',
