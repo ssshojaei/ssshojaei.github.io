@@ -1,6 +1,6 @@
 module.exports = {
   pathPrefix: '',
-  siteUrl: 'https://ssshojaei.github.io',
+  siteUrl: 'https://roxaleh.ir',
   siteTitle: 'سید صالح شجاعی',
   siteDescription: 'بلاگ شخصی سید صالح شجاعی',
   author: 'سید صالح شجاعی',
