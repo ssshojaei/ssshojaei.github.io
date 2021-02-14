@@ -19,9 +19,10 @@ const HTML = ({
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <link
-          href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.1/dist/font-face.css"
           rel="stylesheet"
-          type="text/css"
+          media="print"
+          onLoad="this.onload=null;this.removeAttribute('media');"
+          href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v27.2.1/dist/font-face.css"
         />
         {headComponents}
       </head>
