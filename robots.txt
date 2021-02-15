@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ssshojaei.github.io/sitemap.xml
-Host: https://ssshojaei.github.io
+Sitemap: https://roxaleh.ir/sitemap.xml
+Host: https://roxaleh.ir
