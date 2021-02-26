@@ -9,9 +9,6 @@ const PostCard = ({
     node: { frontmatter },
   },
 }) => {
-  console.log('========DATA=========')
-  console.log(frontmatter)
-  console.log('========DATA=========')
   return (
     <div className={style.postCard}>
       <Link to={`/${frontmatter.path}`}>
