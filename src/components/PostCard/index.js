@@ -15,9 +15,7 @@ const PostCard = ({
         <div
           className={style.postCardImg}
           style={{
-            backgroundImage: `url(${
-              frontmatter ? frontmatter.cover.childImageSharp.fixed.srcWebp : ''
-            })`,
+            backgroundImage: `url(${frontmatter?.cover?.childImageSharp?.fixed?.srcWebp})`,
           }}
         />
         <div className={style.mrTp20}>
