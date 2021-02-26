@@ -21,7 +21,7 @@ const Post = ({
   const {
     title,
     cover: {
-      childImageSharp: { fluid },
+      childImageSharp: { fluid, fixed },
     },
     excerpt,
     path,
@@ -53,6 +53,7 @@ const Post = ({
                 fluid={fluid}
                 title={excerpt}
                 alt={title}
+                fixed={fixed}
               />
             </div>
             <article
@@ -86,6 +87,9 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid_tracedSVG
+            }
+            fixed {
+              src
             }
           }
         }
