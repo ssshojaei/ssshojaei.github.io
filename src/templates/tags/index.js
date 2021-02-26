@@ -15,8 +15,9 @@ const TagPage = ({ data, pageContext }) => {
   const { tag } = pageContext
   const tagName = Config.tags[tag].name || Utils.capitalize(tag)
   const tagPagePath = Config.pages.tag
-  const tagImage = data.allFile.edges.find(edge => edge.node.name === tag).node
-    .childImageSharp.fluid
+  const { fixed, fluid } = data.allFile.edges.find(
+    edge => edge.node.name === tag
+  ).node.childImageSharp
   const posts = data.allMarkdownRemark.edges
 
   return (
@@ -33,7 +34,12 @@ const TagPage = ({ data, pageContext }) => {
           <div className={`marginTopTitle ${style.tagsList}`}>
             <h1>#{tagName}</h1>
             <div className={style.bannerImgContainer}>
-              <Img className={style.bannerImg} fluid={tagImage} alt={tagName} />
+              <Img
+                className={style.bannerImg}
+                fluid={fluid}
+                fixed={fixed}
+                alt={tagName}
+              />
             </div>
             <h4 className="textCenter">{Config.tags[tag].description}</h4>
           </div>
@@ -95,6 +101,9 @@ export const pageQuery = graphql`
               childImageSharp {
                 fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid_tracedSVG
+                }
+                fixed {
+                  srcWebp
                 }
               }
             }

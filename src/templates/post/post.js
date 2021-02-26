@@ -89,7 +89,7 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid_tracedSVG
             }
             fixed {
-              src
+              srcWebp
             }
           }
         }
