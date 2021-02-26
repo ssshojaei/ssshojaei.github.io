@@ -60,6 +60,9 @@ export const query = graphql`
                 fluid(maxWidth: 288) {
                   ...GatsbyImageSharpFluid_tracedSVG
                 }
+                fixed {
+                  srcWebp
+                }
               }
             }
           }
