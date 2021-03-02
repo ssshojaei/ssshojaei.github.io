@@ -91,7 +91,11 @@ const DomContent = () => (
         </li>
       </ul>
       <div className={style.resumeDownload}>
-        <a href="../resume.pdf" download target="_blank">
+        <a
+          href="https://github.com/ssshojaei/ssshojaei.github.io/raw/gh-pages/resume.pdf"
+          download
+          target="_blank"
+        >
           دریافت رزومه
         </a>
       </div>
