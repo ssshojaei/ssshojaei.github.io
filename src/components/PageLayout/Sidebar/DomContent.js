@@ -92,7 +92,7 @@ const DomContent = () => (
       </ul>
       <div className={style.resumeDownload}>
         <a
-          href="https://github.com/ssshojaei/ssshojaei.github.io/raw/gh-pages/resume.pdf"
+          href="https://github.com/ssshojaei/ssshojaei.github.io/raw/main/static/resume.pdf"
           download
           target="_blank"
         >
