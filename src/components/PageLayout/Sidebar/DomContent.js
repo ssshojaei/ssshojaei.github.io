@@ -15,7 +15,7 @@ const { telegram, github, instagram, twitter, linkedin } = Config.social
 
 const DomContent = () => (
   <aside>
-    <div className={style.profileAvatar} />
+    <div className={style.profileAvatar} aria-label="profile image" />
     <div className={`${style.name} centerAlign`}>
       <div className={`${style.boxName} centerAlign`}>
         <h2>
@@ -31,6 +31,7 @@ const DomContent = () => (
           target="_blank"
           label="button"
           rel="noopener noreferrer"
+          aria-label="telegram"
         >
           <FontAwesomeIcon className="fa" icon={faTelegramPlane} />
         </a>
@@ -39,6 +40,7 @@ const DomContent = () => (
           target="_blank"
           label="button"
           rel="noopener noreferrer"
+          aria-label="linkedin"
         >
           <FontAwesomeIcon className="fa" icon={faLinkedinIn} />
         </a>
@@ -47,6 +49,7 @@ const DomContent = () => (
           target="_blank"
           label="button"
           rel="noopener noreferrer"
+          aria-label="twitter"
         >
           <FontAwesomeIcon className="fa" icon={faTwitter} />
         </a>
@@ -55,6 +58,7 @@ const DomContent = () => (
           target="_blank"
           label="button"
           rel="noopener noreferrer"
+          aria-label="github"
         >
           <FontAwesomeIcon className="fa" icon={faGithub} />
         </a>
@@ -63,6 +67,7 @@ const DomContent = () => (
           target="_blank"
           label="button"
           rel="noopener noreferrer"
+          aria-label="instagram"
         >
           <FontAwesomeIcon className="fa" icon={faInstagram} />
         </a>
@@ -95,6 +100,8 @@ const DomContent = () => (
           href="https://github.com/ssshojaei/ssshojaei.github.io/raw/main/static/resume.pdf"
           download
           target="_blank"
+          rel="noreferrer"
+          aria-label="resume"
         >
           دریافت رزومه
         </a>
