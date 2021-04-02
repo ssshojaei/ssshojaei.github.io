@@ -151,12 +151,19 @@ Hey, why am I last?
 ### منابع:
 
 https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e
+
 https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/ch1.md
+
 https://www.javascripttutorial.net/javascript-event-loop/
+
 https://dzone.com/articles/memory-management-and-garbage-collection-in-javasc
+
 https://virgool.io/@shxhryar/javascript-runtime-environment-cad9snkl9syj
+
 https://medium.com/@debbie.obrien/understanding-how-javascript-works-2ed11185e234
+
 https://betterprogramming.pub/how-javascript-works-1706b9b66c4d
+
 www.nodesimplified.com/2017/07/javascript-top-javascript-tips-and.html
 
 و سایر چیزهایی که خوندم و یاد نیست...
