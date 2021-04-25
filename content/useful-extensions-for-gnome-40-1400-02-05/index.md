@@ -1,0 +1,61 @@
+---
+title: 'بهترین افزونه‌های گنوم ۴۰'
+path: blog/useful-extensions-for-gnome-40
+tags: [linux, introduce]
+cover: ./cover.jpg
+date: 1400-02-05
+excerpt: معرفی کاربری ترین افزونه‌ها برای قدم نو رسیده، گنوم ۴۰
+---
+
+بروزرسانی تازه‌ی گنوم کلی تغییرات داشته، از تغییر روش Versioningش به [Semantic Versioning](https://semver.org/) که دیگه به جای گنوم ۳.۳۸ گنوم ۴۰ داریم و سویچش به GTK 4 گرفته تا تغییرات زیبایی در ظاهرش و همینطور از کار افتادن بسیاری از افزونه‌هاش. توی این نوشته میخوام یه سری افزونه‌ی کاربردی رو معرفی کنم برای گنوم ۴۰. همراهم باشید
+
+## [Bottom triggers Activities overview](https://extensions.gnome.org/extension/4120/bottom-triggers-activities-overview/)
+
+اگر مثل من به Dash to Dock عادت دارید، این افزونه فرشته‌ی نجات هست. وقتی موس رو بیارید پایین اسکرینتون، overview گنوم باز میشه
+
+## [Espresso](https://extensions.gnome.org/extension/4135/espresso/)
+
+یه فورک از Caffeine برای گنوم ۴۰
+ویرایش: خود کافئین آپدیت داده و روی گنوم ۴۰ هم بدون مشکل کار میکنه
+
+## [No overview at start-up](https://extensions.gnome.org/extension/4099/no-overview/)
+
+وقتی لاگین میشید، صفحه‌ی overview باز میشه پیش فرض که به من و این دوستمون انگار خیلی نچسبیده
+
+## [Just Perfection](https://extensions.gnome.org/extension/3843/just-perfection/)
+
+این افزونه‌ی خفن امکان برداشتن و اضافه کردن هر چیزی رو به پنل و بخش‌های مختلف گنوم میده. از بخش‌های تازه داخل گنوم ۴۰ هم پشتیبانی میکنه
+
+## [Cleaner Overview](https://extensions.gnome.org/extension/3759/cleaner-overview/)
+
+این افزونه هم خیلی جالبه، براتون برنامه‌ها رو با اندازه‌ی ثابت و به ترتیب آخرین استفاده میچینه توی overview. البته من همین درهم‌برهم بودن گنوم رو بیشتر پسندیدم
+
+## [Tiling Assistant](https://extensions.gnome.org/extension/3733/tiling-assistant/)
+
+خدا ترین افزونه‌ی لیست! میتونید چهارتا برنامه رو توی صفحه بچینید یا وقتی یه برنامه رو میندازید یه گوشه، لیست برنامه‌هاتون رو میاره تا برای کنارش یکی رو انتخاب کنید
+
+## [Transparent Shell](https://extensions.gnome.org/extension/3518/transparent-shell/)
+
+تاپ‌بار، دَش و سرچ‌باکس گنوم ۴۰ رو شفاف میکنه که برای تم من خیلی جوابه
+
+## [Appindicator Support](https://extensions.gnome.org/extension/615/appindicator-support/)
+
+تاپ آیکون‌ها رو نشون میده (آیکون تلگرام و... رو توی منوی بالا میتونید ببینید)
+
+## [Gnome 40 Flat Workspace](https://extensions.gnome.org/extension/4215/gnome-40-plat-workspace/)
+
+سایه‌ی زیر workspaceها رو حذف میکنه که اگر flat گرا هستید به کارتون میاد
+
+## [Custom Hot Corners - Extended](https://extensions.gnome.org/extension/4167/custom-hot-corners-extended/)
+
+میتونید برای هر کدوم از مانیتورهاتون و برای هر حالتی از موس، یه رویداد تعریف کنید. بهترین افزونه برای این کار هست بی شک
+
+## [Gnome 40 UI Improvements](https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/)
+
+منوی سرچ رو مخفی میکنه پیش‌فرض مگر وقتی که شروع به تایپ کنید که فضای overview رو بیشتر میکنه
+پیش‌نمایش بندانگشتی دسکتاپ‌ها رو ۲ برابر بزرگتر میکنه
+بک‌گراند خودتون رو نشون میده توی پیش‌نمایش دسکتاپ‌ها به جای رنگ خاکستری
+
+دمتون گرم که خوندید تا اینجا رو، اگر افزونه‌ای به کارتون اومده همینجا معرفیش کنید
+
+برای دیدن و ارسال دیدگاه‌ها انگار نیاز به فیل‌تر شی‌کَن دارید 💔
