@@ -15,7 +15,7 @@ const SubmitQuote = ({ handleOk }) => {
       },
       body:
         '{"query":"mutation MyMutation {\\n  __typename\\n  createQuotes(data: {text: \\"' +
-        text +
+        text.replace(/\n/g, ' ') +
         '\\", author: \\" ' +
         author +
         '\\", senderName: \\"' +
