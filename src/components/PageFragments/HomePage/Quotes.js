@@ -1,9 +1,24 @@
+import { Button, Modal } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { quotesUrl } from '../../../../config'
+import SubmitQuote from './SubmitQuote'
 
 const Quotes = () => {
   const [quote, setQuote] = useState({})
   const [loading, setLoading] = useState(true)
+  const [isModalVisible, setIsModalVisible] = useState(false)
+
+  const showModal = () => {
+    setIsModalVisible(true)
+  }
+
+  const handleOk = () => {
+    setIsModalVisible(false)
+  }
+
+  const handleCancel = () => {
+    setIsModalVisible(false)
+  }
 
   useEffect(() => {
     fetch(quotesUrl, {
@@ -38,9 +53,29 @@ const Quotes = () => {
             <time dateTime={quote.createdAt}>
               {new Date(quote.createdAt).toLocaleDateString('fa-IR')}
             </time>
+            <Button size="small" type="dashed" onClick={showModal}>
+              نقل‌قول تازه
+            </Button>
           </div>
         </blockquote>
       )}
+
+      <Modal
+        footer={null}
+        destroyOnClose
+        title="ارسال نقل‌قول تازه"
+        visible={isModalVisible}
+        onCancel={handleCancel}
+      >
+        <p>
+          اگر شعر، جمله، دیالوگ یا نوشته‌ای دیدی که از نظرت جالب بود، خیلی
+          خوشحال میشم که با ما هم در میون بذاری
+          <br />
+          تلاش میکنم خیلی زود نوشته‌ات رو تایید کنم، پس از اون بالای بلاگم نشون
+          داده میشه و همه کیف میکنیم از خوندنش
+        </p>
+        <SubmitQuote handleOk={handleOk} />
+      </Modal>
     </div>
   )
 }

@@ -34,6 +34,7 @@ module.exports = {
   contactFormUrl: process.env.CONTACT_FORM_ENDPOINT || '',
   quotesUrl:
     'https://api-eu-central-1.graphcms.com/v2/ckon9fqxyf7oj01z208apgg9u/master',
+  quotesToken: process.env.QUOTES_TOKEN || '',
   tags: {
     programming: {
       name: 'برنامه نویسی',
