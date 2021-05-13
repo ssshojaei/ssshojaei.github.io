@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import (reference) './mixins.less';
 
 body {
@@ -5,6 +6,10 @@ body {
   direction: rtl;
   font-family: 'Vazir', sans-serif;
   background-color: #f0f2f5;
+}
+
+:root {
+  --quote-icon: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJxdW90ZS1sZWZ0IiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtcXVvdGUtbGVmdCBmYS13LTE2IiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGZpbGw9ImN1cnJlbnRDb2xvciIgZD0iTTQ2NCAyNTZoLTgwdi02NGMwLTM1LjMgMjguNy02NCA2NC02NGg4YzEzLjMgMCAyNC0xMC43IDI0LTI0VjU2YzAtMTMuMy0xMC43LTI0LTI0LTI0aC04Yy04OC40IDAtMTYwIDcxLjYtMTYwIDE2MHYyNDBjMCAyNi41IDIxLjUgNDggNDggNDhoMTI4YzI2LjUgMCA0OC0yMS41IDQ4LTQ4VjMwNGMwLTI2LjUtMjEuNS00OC00OC00OHptLTI4OCAwSDk2di02NGMwLTM1LjMgMjguNy02NCA2NC02NGg4YzEzLjMgMCAyNC0xMC43IDI0LTI0VjU2YzAtMTMuMy0xMC43LTI0LTI0LTI0aC04QzcxLjYgMzIgMCAxMDMuNiAwIDE5MnYyNDBjMCAyNi41IDIxLjUgNDggNDggNDhoMTI4YzI2LjUgMCA0OC0yMS41IDQ4LTQ4VjMwNGMwLTI2LjUtMjEuNS00OC00OC00OHoiPjwvcGF0aD48L3N2Zz4=);
 }
 
 h1,
@@ -162,4 +167,98 @@ article img {
 
 article {
   overflow-wrap: anywhere;
+}
+
+blockquote {
+  border-right: 3px solid #a1a1a1;
+  color: #1a1a1a;
+  font-size: 1.25em;
+  font-style: italic;
+  line-height: 1.8em;
+  margin: 1.1em auto;
+  padding: 1em 2em;
+  position: relative;
+  transition: 0.2s border ease-in-out;
+  z-index: 0;
+}
+blockquote:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  height: 2em;
+  background-color: #fff;
+  width: 5px;
+  margin-top: -1em;
+}
+blockquote:after {
+  content: var(--quote-icon);
+  position: absolute;
+  top: 50%;
+  right: -0.5em;
+  color: #a1a1a1;
+  font-style: normal;
+  line-height: 1em;
+  text-align: center;
+  text-indent: -2px;
+  width: 1em;
+  margin-top: -0.5em;
+  transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
+}
+blockquote.format:before,
+blockquote.format:after {
+  display: none;
+}
+blockquote:active:after {
+  transform: rotateY(360deg);
+}
+blockquote cite {
+  display: block;
+  font-size: 0.75em;
+  line-height: 1.8em;
+  margin-top: 1em;
+}
+
+blockquote .sender {
+  font-size: 0.65em;
+  display: flex;
+  gap: 10px;
+}
+
+blockquote .sender span a {
+  color: #304cfd;
+}
+
+@media (max-width: 980px) {
+  blockquote {
+    font-size: 1.1em;
+    margin: 1.1em -2em;
+  }
+}
+@media (max-width: 767px) {
+  blockquote {
+    border-top: 2px solid #a1a1a1;
+    border-bottom: 2px solid #a1a1a1;
+    border-right: none;
+    margin: 1.5em 0;
+    padding: 1.5em 1em;
+  }
+  blockquote:before {
+    right: 50%;
+    top: 0;
+    height: 4px;
+    margin-top: -3px;
+    margin-right: -1em;
+    width: 2em;
+  }
+  blockquote:after {
+    font-size: 0.75em;
+    right: 50%;
+    top: 0;
+    margin-top: -0.5em;
+    margin-right: -0.5em;
+  }
+  blockquote cite {
+    text-align: right;
+  }
 }
