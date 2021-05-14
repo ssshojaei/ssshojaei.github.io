@@ -1,13 +1,19 @@
-import { DiscussionEmbed } from 'disqus-react'
+import { Disqus } from 'gatsby-plugin-disqus'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 const Comments = ({ title, path }) => {
-  const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: path, title },
-  }
-  return <DiscussionEmbed {...disqusConfig} />
+  return (
+    <div>
+      <Disqus
+        config={{
+          url: path,
+          identifier: path,
+          title: title,
+        }}
+      />
+    </div>
+  )
 }
 
 Comments.propTypes = {
