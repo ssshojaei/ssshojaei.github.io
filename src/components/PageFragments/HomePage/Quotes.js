@@ -1,4 +1,4 @@
-import { Button, Modal } from 'antd'
+import { Button, Modal, Skeleton } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { quotesUrl } from '../../../../config'
 import SubmitQuote from './SubmitQuote'
@@ -38,7 +38,11 @@ const Quotes = () => {
   return (
     <div className="container">
       <h1 className="titleSeparate">سخنی از دوست</h1>
-      {!loading && (
+      {loading ? (
+        <div style={{ margin: '30px 0' }}>
+          <Skeleton active />
+        </div>
+      ) : (
         <blockquote>
           {quote.text}
           <cite>~ {quote.author}</cite>
