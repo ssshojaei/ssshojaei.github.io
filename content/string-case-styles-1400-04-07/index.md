@@ -49,7 +49,7 @@ const user login count = 3 //Error
 
 مار گونه: `user_login_count`
 
-مار گونه (All Gaps): `USER_LOGIN_COUNT‍
+مار گونه (All Gaps): `USER_LOGIN_COUNT‍`
 
 از این روش هم توی زبان‌های زیادی استفاده میشه، از حالت Snake All Gaps معمولا برای تعریف ثابت‌ها استفاده میشه و از حالت معمولی هم بیشتر توی تعریف فیلد‌های دیتابیس استفاده میشه.
 
