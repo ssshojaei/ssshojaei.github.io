@@ -26,8 +26,20 @@ const Quotes = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body:
-        '{"query":"query MyQuery {\\n  quote(last: 1) {\\n    id\\n    text\\n    author\\n    senderName\\n    senderLink\\n    createdAt\\n  }\\n}\\n","operationName":"MyQuery"}',
+      body: JSON.stringify({
+        query: `
+          query GetLastItem {
+            quote(last: 1) {
+              id
+              text
+              author
+              senderName
+              senderLink
+              createdAt
+            }
+          }
+        `,
+      }),
     })
       .then(res => res.json())
       .then(({ data: { quote } }) => {
