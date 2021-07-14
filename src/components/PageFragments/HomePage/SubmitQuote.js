@@ -13,16 +13,21 @@ const SubmitQuote = ({ handleOk }) => {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${quotesToken}`,
       },
-      body:
-        '{"query":"mutation MyMutation {\\n  __typename\\n  createQuotes(data: {text: \\"' +
-        text.replace(/\n/g, ' ') +
-        '\\", author: \\" ' +
-        author +
-        '\\", senderName: \\"' +
-        name +
-        '\\", senderLink: \\"' +
-        link +
-        '\\"}) {\\n    id\\n  }\\n}\\n","operationName":"MyMutation"}',
+      body: JSON.stringify({
+        query: `
+        mutation MyMutation {
+        __typename
+        createQuotes(data: {
+          text: "${text}",
+          author: "${author}",
+          senderName: "${name}",
+          senderLink: "${link || ''}"
+        }) {
+          id
+        }
+      }
+      `,
+      }),
     })
       .then(() => {
         message.success('دمت گرم بابت اشتراک گذاری 🙂')
