@@ -83,7 +83,7 @@ const DomContent = () => (
           <span>
             <FeatherIcon size="19" icon="map-pin" />
           </span>{' '}
-          &nbsp; &nbsp; شیراز، ایران
+          &nbsp; &nbsp; مازندران، بابلسر، ایران
         </li>
         <li className={`${style.contactBlockItem}`}>
           <span>
