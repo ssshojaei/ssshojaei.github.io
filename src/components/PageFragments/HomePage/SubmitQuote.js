@@ -7,7 +7,7 @@ const SubmitQuote = ({ handleOk }) => {
   const [form] = Form.useForm()
 
   const onFinish = ({ author, name, link = '', text }) => {
-    fetch(quotesUrl, {
+    fetch('quotesUrl', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,10 +29,15 @@ const SubmitQuote = ({ handleOk }) => {
       `,
       }),
     })
+      .then(res => res.json())
       .then(() => {
         message.success('دمت گرم بابت اشتراک گذاری 🙂')
       })
       .catch(err => {
+        message.error(
+          'اوپس! یه مشکلی بود. ممنون میشم اگه به صالح خبر بدی 💔',
+          6
+        )
         console.error(err)
       })
     handleOk()
