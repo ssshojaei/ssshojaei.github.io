@@ -7,7 +7,7 @@ const SubmitQuote = ({ handleOk }) => {
   const [form] = Form.useForm()
 
   const onFinish = ({ author, name, link = '', text }) => {
-    fetch('quotesUrl', {
+    fetch(quotesUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
