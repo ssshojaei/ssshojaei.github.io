@@ -20,8 +20,8 @@ const SubmitQuote = ({ handleOk }) => {
         createQuotes(data: {
           text: "${text}",
           author: "${author}",
-          senderName: "${name}",
-          senderLink: "${link || ''}"
+          senderName: "${name}"
+          ${link && `,senderLink: "${link}"`}
         }) {
           id
         }
