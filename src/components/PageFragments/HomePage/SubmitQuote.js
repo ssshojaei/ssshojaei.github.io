@@ -18,7 +18,7 @@ const SubmitQuote = ({ handleOk }) => {
         mutation MyMutation {
         __typename
         createQuotes(data: {
-          text: "${text}",
+          text: "${text.replace('\n', ' ')}",
           author: "${author}",
           senderName: "${name}"
           ${link && `,senderLink: "${link}"`}
