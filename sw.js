@@ -27,23 +27,23 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-6c1ecbc47b70317c5781.js"
+    "url": "webpack-runtime-03374bb5b35edbc3b172.js"
   },
   {
-    "url": "framework-2674486bf225d6eb4cc9.js"
+    "url": "framework-0c07c9218e9798907e47.js"
   },
   {
-    "url": "app-8fe7ab982448246165c0.js"
+    "url": "app-f703789cfa1359ece0d8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "2a7d7d36f196fbbb3a5b4c6c06e2609b"
+    "revision": "5dd9bddf80d3c46b32d73bc75461fb1d"
   },
   {
     "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-77466cc0b3ed4dac08eb.js"
   },
   {
-    "url": "polyfill-1c45b47fff62cc7c6731.js"
+    "url": "polyfill-8237e81e2c4cf3384a2a.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -54,7 +54,7 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
 workbox.routing.registerRoute(/^https?:.*\/page-data\/.*\.json/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
-workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+workbox.routing.registerRoute(/^https?:.*\.(png|jpg|jpeg|webp|avif|svg|gif|tiff|js|woff|woff2|json|css)$/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/^https?:\/\/fonts\.googleapis\.com\/css/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
 
 /* global importScripts, workbox, idbKeyval */
@@ -139,7 +139,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-8fe7ab982448246165c0.js`))) {
+  if (!resources || !(await caches.match(`/app-f703789cfa1359ece0d8.js`))) {
     return await fetch(event.request)
   }
 

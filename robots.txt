@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://roxaleh.ir/sitemap.xml
+Sitemap: https://roxaleh.ir/sitemap/sitemap-index.xml
 Host: https://roxaleh.ir
