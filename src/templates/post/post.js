@@ -73,7 +73,7 @@ const Post = ({
 }
 
 export const pageQuery = graphql`
-  query($postPath: String!) {
+  query ($postPath: String!) {
     markdownRemark(frontmatter: { path: { eq: $postPath } }) {
       html
       timeToRead
@@ -83,6 +83,7 @@ export const pageQuery = graphql`
         tags
         path
         excerpt
+        show
         cover {
           childImageSharp {
             fluid(maxWidth: 1000) {
@@ -108,6 +109,7 @@ export const pageQuery = graphql`
             title
             tags
             excerpt
+            show
             cover {
               childImageSharp {
                 fluid(maxWidth: 600) {

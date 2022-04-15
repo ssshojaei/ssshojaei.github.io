@@ -5,6 +5,7 @@ tags: [programming, introduce]
 cover: ./cover.jpg
 date: 1400-04-07
 excerpt: معرفی Camel, Pascal, Snake, Kebab Case
+show: true
 ---
 
 توی برنامه‌نویسی معمولا از فاصله (" ") برای جدا کردن مفهومی کلمات استفاده نمیشه، زبان‌های برنامه‌نویسی برداشت دیگه‌ای دارن از این کاراکتر. بنابراین به جای فاصله

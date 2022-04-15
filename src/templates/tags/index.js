@@ -81,7 +81,7 @@ TagPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  query($tag: String!) {
+  query ($tag: String!) {
     allMarkdownRemark(
       filter: {
         frontmatter: { tags: { in: [$tag] } }
@@ -97,6 +97,7 @@ export const pageQuery = graphql`
             path
             tags
             excerpt
+            show
             cover {
               childImageSharp {
                 fluid(maxWidth: 600) {

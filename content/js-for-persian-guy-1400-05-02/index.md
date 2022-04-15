@@ -5,6 +5,7 @@ tags: [programming, introduce]
 cover: ./cover.jpg
 date: 1400-05-02
 excerpt: معرفی راه حل های فرانت‌اند برای نیازهای فارسی زبان ها
+show: true
 ---
 
 ## محلی سازی:

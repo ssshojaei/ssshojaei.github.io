@@ -26,7 +26,13 @@ const PostCard = ({
           </p>
           <h3>{frontmatter ? frontmatter.title : ''}</h3>
           <p>{frontmatter ? frontmatter.excerpt : ''}</p>
-          <p style={{ color: '#ce6d96', wordSpacing: '10px' }}>
+          <p
+            style={{
+              color: '#ce6d96',
+              wordSpacing: '10px',
+              direction: 'ltr !important',
+            }}
+          >
             {`#${frontmatter.tags.join(' #')}`}
           </p>
         </div>
