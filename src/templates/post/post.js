@@ -1,4 +1,4 @@
-import { Layout } from 'antd'
+import { Button, Layout, Typography } from 'antd'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import 'prismjs/themes/prism-solarizedlight.css'
@@ -12,6 +12,7 @@ import SEO from '../../components/Seo'
 import Utils from '../../utils/pageUtils'
 import './highlight-syntax.less'
 import style from './post.module.less'
+import { navigate } from 'gatsby'
 
 const Post = ({
   data: {
@@ -23,6 +24,7 @@ const Post = ({
     cover: {
       childImageSharp: { fluid, fixed },
     },
+    show,
     excerpt,
     path,
   } = frontmatter
@@ -33,7 +35,9 @@ const Post = ({
     path
   )
 
-  return (
+  const { Title } = Typography
+
+  return show ? (
     <Layout className="outerPadding">
       <Layout className="container">
         <SEO
@@ -65,6 +69,40 @@ const Post = ({
               title={title}
               path={path}
             />
+          </div>
+        </SidebarWrapper>
+      </Layout>
+    </Layout>
+  ) : (
+    <Layout className="outerPadding">
+      <Layout className="container">
+        <Header />
+        <SEO title="پست موقتا حذف شده" />
+        <SidebarWrapper>
+          <div
+            className="marginTopTitle"
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
+              gap: 30,
+              height: '500px',
+            }}
+          >
+            <Title level={2}>این پست موقتا از دسترس خارج شده است</Title>
+            <Button
+              href="/"
+              onClick={e => {
+                e.preventDefault()
+                navigate('/')
+              }}
+              type="primary"
+              shape="round"
+              size="large"
+            >
+              بازگشت به صفحه‌ی اصلی
+            </Button>
           </div>
         </SidebarWrapper>
       </Layout>
