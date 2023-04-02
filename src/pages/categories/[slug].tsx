@@ -74,7 +74,7 @@ export async function getStaticPaths() {
 
   return {
     paths: categories,
-    fallback: true
+    fallback: false
   }
 }
 
