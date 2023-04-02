@@ -72,8 +72,6 @@ export async function getStaticPaths() {
     .map(post => `/categories/${post.tags}`)
     .flat()
 
-  console.log({ categories })
-
   return {
     paths: categories,
     fallback: true

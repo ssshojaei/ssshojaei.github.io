@@ -11,12 +11,6 @@ const ContactPage = () => {
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault()
-    const { name, email, message } = (e.target as any)?.elements || {}
-    console.log({
-      name: name.value,
-      email: email.value,
-      message: message.value
-    })
 
     setStatus('loading')
     const formData = new FormData((e as any).target)
