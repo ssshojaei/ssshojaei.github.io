@@ -1,0 +1,89 @@
+.toggle-theme {
+  @apply flex justify-center items-center select-none my-6;
+
+  span {
+    @apply transition-[color] duration-[250ms] ease-[ease-in-out] cursor-pointer text-xs font-semibold uppercase px-3 py-2;
+
+    &:nth-of-type(1) {
+      &:hover {
+        @apply text-[#404346];
+      }
+      &:active {
+        @apply text-[#010101];
+      }
+    }
+    &:nth-of-type(2) {
+      &:hover {
+        @apply text-[#fcfefe];
+      }
+      &:active {
+        @apply text-[#cdd1d5];
+      }
+    }
+  }
+  input {
+    @apply relative overflow-hidden transition-all duration-[250ms] ease-[ease-in-out] appearance-none w-12 h-7 bg-[#dce0e3] cursor-pointer select-none m-0 rounded-[14px] outline-none;
+    &:checked {
+      @apply bg-[#404346];
+
+      &:hover,
+      &:hover::after {
+        @apply bg-[#2d2f31];
+      }
+      &:active,
+      &:active::after {
+        @apply bg-[#141516];
+      }
+      &::before {
+        @apply bg-[#dce0e3] left-6;
+      }
+      &::after {
+        @apply bg-[#404346] w-px h-px rounded-[0.5px] right-0.5 top-3;
+      }
+    }
+    &:hover,
+    &:hover::after {
+      @apply bg-[#fcfefe];
+    }
+    &:focus,
+    &:focus-visible {
+      @apply shadow-[0_0_0_2px];
+    }
+    &:focus:not(:focus-visible) {
+      @apply shadow-none;
+    }
+    &:active,
+    &:active::after {
+      @apply bg-[#cdd1d5];
+    }
+    &::before {
+      @apply bg-[#2d2f31]  content-[''] absolute block transition-all duration-[250ms] ease-[ease-in-out] w-5 h-5 rounded-xl left-1 top-1;
+    }
+    &::after {
+      @apply content-[''] absolute block transition-all duration-[250ms] ease-[ease-in-out]  w-8 h-8 bg-[#dce0e3] rounded-2xl right-0.5 -top-0.5;
+    }
+  }
+  &[data-checked='false'] {
+    span {
+      @apply text-[#b9bdc1];
+      &:nth-of-type(1) {
+        @apply pointer-events-none;
+      }
+    }
+  }
+  &[data-checked='true'] {
+    span {
+      @apply text-[#5b5e62];
+      &:nth-of-type(2) {
+        @apply pointer-events-none;
+      }
+    }
+  }
+  &[data-transition-disabled='true'] {
+    *,
+    *::before,
+    *::after {
+      @apply duration-[0ms];
+    }
+  }
+}

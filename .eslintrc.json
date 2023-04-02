@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/jsx-no-target-blank": [2, { "allowReferrer": true }],
+    "react/display-name": [0, { "ignoreTranspilerName": false }]
+  }
 }

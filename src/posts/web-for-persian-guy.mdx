@@ -1,0 +1,100 @@
+---
+title: 'وب برای فارسی زبان ها'
+description: معرفی راه حل های فرانت‌اند برای نیازهای فارسی زبان ها
+date: '2021-07-24'
+coverImage: '/posts/web-for-persian-guy.jpg'
+tags: [programming, introduce]
+show: true
+---
+
+## محلی سازی:
+
+اگر بخوایم به نرم‌افزارمون زبان تازه‌ای اضافه کنیم، به جز ترجمه کردن متن‌ها به اون زبان، کارهایی دیگه‌ای رو هم باید انجام بدیم. مثلا جهت سایت رو راست‌به‌چپ/چپ‌به‌راست کنیم، فونت مناسب لود کنیم و تاریخ و واحد پول رو عوض کنیم.
+
+به این کار بومی سازی یا محلی سازی کردن میگن. راه‌های گوناگونی وجود داره برای انجام این کارها که خیلی‌هامون توی پروژه‌های مختلف با روش‌های مختلفی این ساختار رو پیاده میکنیم و ازش باخبر هستیم. من در اینجا درمورد روش ساده‌ای که خیلی‌هامون ازش بی‌خبر هستیم حرف میزنم؛ بدون هیچ کتابخونه یا کد اضافه‌ای میتونیم این کار رو با خود _JS_, _HTML_, _CSS_ انجام بدیم.
+
+## تبدیل اعداد انگلیسی به فارسی:
+
+به سادگی می‌تونید اعداد رو به زبونی که میخواید بنویسید و سه رقم سه رقم هم جداش کنید.
+
+```javascript
+const convertToPersianDigits = text => text.toLocaleString('fa-IR')
+
+convertToPersianDigits(100000) //   ۱۰۰٬۰۰۰
+```
+
+و این تنها کاری نیست که میتونید بکنید، میشه با سادگی واحد پولی کشور رو هم بهش اضافه کرد!
+
+```javascript
+const convertToPersianDigits = text =>
+  text.toLocaleString('fa-IR', {
+    style: 'currency',
+    currency: 'IRR'
+  })
+convertToPersianDigits(100000) //  "‎ریال ۱۰۰٬۰۰۰٫۰۰"
+```
+
+از [Number.prototype.toLocaleString](https://reference.codeproject.com/book/javascript/reference/global_objects/number/tolocalestring) میتونید آپشن‌های کاملش رو ببینید.
+
+## تبدیل تاریخ به خورشیدی:
+
+برای این کار هم کلی کتابخونه رو روش گوناگون هست ولی بدون هیچ دردسری با خود مرورگر به سادگی میشه این رو تبدیل کرد. درموردش پیش از این توی تلگرامم ([تبدیل تاریخ میلادی به شمسی بدون هیچ کتابخانه‌ای با یک خط](https://t.me/roxaleh/269)) گفته بودم. بریم با هم بیشتر بدونیم ازش.
+
+```javascript
+const today = new Date() //  Date Sat Jul 24 2021 12:42:25 GMT+0430 (Iran Daylight Time)
+today.toLocaleDateString('fa-IR') //  "۱۴۰۰/۵/۱۱"
+```
+
+و همینطور می‌تونید آپشن‌ها را اونجوری که می‌خواید تغییر بدید.
+
+```javascript
+const today = new Date()
+today.toLocaleDateString('fa-IR', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+})
+// "۱۴۰۰ مرداد ۱۱, دوشنبه"
+```
+
+می‌تونید لیست کامل آپشن‌هایی که می‌شه استفاده کرد رو از [MDN DateTimeFormat constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) ببینید.
+
+## فونت در چند زبانگی:
+
+فرض کنید که یک سایت فارسی/انگلیسی داریم و می‌خوایم برای هر کدوم از زبان‌ها، فونت مناسب همون زبون رو استفاده کنیم و یا یه متنی داریم که هم از کلمات انگلیسی داخلش استفاده شده هم از کلمات فارسی و میخوایم فونت مخصوص هر زبان براش نمایش داده بشه. توی این زمان یکی از ویژگی‌ها خفن _CSS_ به کارمون میاد.
+
+```css
+@font-face {
+  /* Persian Font */
+  font-family: 'RoxalehFont';
+  src: url(./fonts/Vazir.ttf);
+  unicode-range: U+0600-06FF;
+}
+@font-face {
+  /* english font */
+  font-family: 'RoxalehFont';
+  src: url(./fonts/Ubuntu.ttf);
+  unicode-range: U+0020-007F;
+}
+
+* {
+  font-family: 'RoxalehFont';
+}
+```
+
+با این روش تمام کارکترهای فارسی، از فونت وزیر و تمام کاراکترهای انگلیسی از فونت اوبونتو استفاده میکنن، بدون اینکه مجبور باشم با تغییر زبان، _font-family_ تمام استایل‌هام رو عوض کنم!
+
+## جهت خودکار:
+
+معمولا توی سایت‌های فارسی، تمام _diraction_ ها رو _rtl_ میذاریم و همه چیز رو راست به چپ می‌کنیم اما اگر سایتمون دو زبانه باشه چه باید کنیم؟
+
+![Auto direction](/posts/web-for-persian-guy/textarea_auto_direction.png)
+
+وقتی ویژگی _dir_ چیزی رو _auto_ بذاریم، خود مرورگر راست‌به‌چپ یا چپ‌به‌راست بودن متن رو تشخیص میده و جهتش رو تنظیم میکنه.
+
+```html
+<textarea placeholder="Enter your message" dir="auto"></textarea>
+```
+
+این نوشته به مرور به‌روزرسانی میشه، شما هم اگر تجربه‌ای دارید از بومی‌کردن سایتتون برای زبان‌های مختلف، خیلی خوشحال میشم توی قسمت دیدگاه‌ها باهام به اشتراک بذارید.

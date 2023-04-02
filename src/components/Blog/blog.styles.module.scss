@@ -1,0 +1,67 @@
+.article {
+  @apply max-w-screen-md mx-auto;
+  img {
+    @apply mx-auto my-4 rounded hover:scale-105 transition-transform;
+  }
+  p {
+    @apply my-2 text-gray-700;
+  }
+  strong {
+    @apply font-bold text-gray-900;
+  }
+  a {
+    @apply text-blue-500;
+  }
+  pre {
+    @apply bg-zinc-900 rounded p-2 my-4;
+    direction: ltr;
+    code {
+      @apply text-[#f8f8f2] text-[1em] text-left whitespace-pre break-normal leading-normal;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
+        monospace;
+      word-spacing: normal;
+      word-wrap: normal;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      tab-size: 4;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none;
+      &::first-line {
+        @apply text-blue-400 hidden;
+      }
+    }
+  }
+
+  figure {
+    @apply my-4;
+    figcaption:first-child {
+      @apply font-bold;
+    }
+    figcaption:last-child {
+      @apply text-gray-600 text-sm;
+    }
+    audio {
+      @apply my-2;
+    }
+  }
+}
+
+:global(.dark) .article {
+  p {
+    @apply my-2 text-gray-200;
+  }
+  strong {
+    @apply font-bold text-gray-100;
+  }
+  a {
+    @apply text-blue-400;
+  }
+  figure {
+    figcaption:last-child {
+      @apply text-gray-300 text-sm;
+    }
+  }
+}
