@@ -18,11 +18,11 @@ const CategoriesPage = ({ posts, category }: IndexProps) => {
     <>
       <Head>
         <title>
-          نوشته‌ها در دسته‌بندی {category.title} | سید صالح شجاعی
+          نوشته‌ها در دسته‌بندی {category?.title} | سید صالح شجاعی
         </title>
         <meta
           name="description"
-          content={`${category.subtitle} | صالح شجاعی`}
+          content={`${category?.subtitle} | صالح شجاعی`}
         />
         <meta
           name="viewport"
