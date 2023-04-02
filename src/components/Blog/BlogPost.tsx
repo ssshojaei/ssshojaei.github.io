@@ -16,7 +16,7 @@ type TBlogPostProps = {
 const DisqusComments = ({ post }: TBlogPostProps) => {
   const disqusShortname = 'roxaleh'
   const disqusConfig = {
-    url: `https://roxaleh.ir/posts/${post.slug}`,
+    url: `https://roxaleh.ir/blog/${post.slug}`,
     identifier: post.slug,
     title: post.title
   }
