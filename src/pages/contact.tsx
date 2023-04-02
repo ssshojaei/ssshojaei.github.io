@@ -51,8 +51,6 @@ const ContactPage = () => {
             <form
               id="form"
               onSubmit={handleSubmit}
-              //   action="https://api.web3forms.com/submit"
-              //   method="POST"
               className="w-full max-w-lg mx-auto">
               <div className="flex flex-wrap -mx-3 mb-6">
                 <div className="w-full md:w-1/2 px-3">
