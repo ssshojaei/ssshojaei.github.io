@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import BlogPost from '@/components/Blog/BlogPost'
 import Layout from '@/components/Layout/Layout'
 import { getAllPosts, getPostBySlug } from '@/lib/api'
