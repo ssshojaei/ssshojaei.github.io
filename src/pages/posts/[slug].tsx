@@ -29,6 +29,9 @@ const BlogPostPage = ({ post }: Props) => {
           content="width=device-width, initial-scale=1"
         />
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content={post.coverImage} />
+        <meta property="og:image:width" content="768" />
+        <meta property="og:image:height" content="432" />
       </Head>
       <main>
         <Layout>
