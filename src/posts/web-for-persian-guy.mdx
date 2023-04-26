@@ -58,6 +58,24 @@ today.toLocaleDateString('fa-IR', {
 // "۱۴۰۰ مرداد ۱۱, دوشنبه"
 ```
 
+و یا حتی با اعداد انگلیسی ببینیدش
+
+```javascript
+const today = new Date()
+
+const persianDate = today.toLocaleDateString('fa-IR-u-nu-latn', {
+  year: 'numeric',
+  month: 'numeric',
+  day: 'numeric'
+}) // 1402/2/6
+
+const getDate = persianDate.split('/').map(x => +x) // [1402, 2, 6]
+const [pYear, pMonth, pDay] = getDate
+
+console.log({ pYear, pMonth, pDay })
+// { pYear: 1402, pMonth: 2, pDay: 6 }
+```
+
 می‌تونید لیست کامل آپشن‌هایی که می‌شه استفاده کرد رو از [MDN DateTimeFormat constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat) ببینید.
 
 ## فونت در چند زبانگی:
@@ -98,3 +116,5 @@ today.toLocaleDateString('fa-IR', {
 ```
 
 این نوشته به مرور به‌روزرسانی میشه، شما هم اگر تجربه‌ای دارید از بومی‌کردن سایتتون برای زبان‌های مختلف، خیلی خوشحال میشم توی قسمت دیدگاه‌ها باهام به اشتراک بذارید.
+
+- `به روز شده در ۰۶-۰۲-۱۴۰۲`
