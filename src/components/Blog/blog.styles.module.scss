@@ -13,10 +13,10 @@
     @apply text-blue-500;
   }
   pre {
-    @apply bg-zinc-900 rounded p-2 my-4;
+    @apply bg-zinc-900 rounded p-2 my-4 overflow-x-scroll;
     direction: ltr;
     code {
-      @apply text-[#f8f8f2] text-[1em] text-left whitespace-pre break-normal leading-normal;
+      @apply text-[#f8f8f2] text-[1em] text-left leading-normal;
       text-shadow: 0 1px rgba(0, 0, 0, 0.3);
       font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono',
         monospace;
