@@ -1,7 +1,7 @@
 const withMDX = require('@next/mdx')({
+  extension: /.mdx?$/,
   options: {
-    remarkPlugins: [],
-    rehypePlugins: []
+    remarkPlugins: [remarkGfm] // ESM ✅
   }
 })
 
