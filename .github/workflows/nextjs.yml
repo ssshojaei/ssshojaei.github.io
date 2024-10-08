@@ -24,12 +24,12 @@ jobs:
         run: npm run build
 
       - name: Deploy to Server
-        uses: appleboy/ssh-action@v0.1.2
+        uses: appleboy/ssh-action@master # Use latest version
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          port: ${{ secrets.SSH_PORT }} # Ensure SSH_PORT is correctly set in secrets
           script: |
             export GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
 
