@@ -5,15 +5,6 @@ const withMDX = require('@next/mdx')({
   }
 })
 
-// const withMDX = require('@next/mdx')({
-//   extension: /\.mdx?$/,
-//   options: {
-//     providerImportSource: '@mdx-js/react',
-//     remarkPlugins: [],
-//     rehypePlugins: []
-//   }
-// })
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Configure pageExtensions to include md and mdx
