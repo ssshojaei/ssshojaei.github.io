@@ -13,6 +13,7 @@ const ContactPage = () => {
     e.preventDefault()
 
     setStatus('loading')
+    // @typescript-eslint/no-explicit-any
     const formData = new FormData((e as any).target)
 
     formData.append(

@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/autoplay'
 import 'swiper/css/pagination'
 
+import Image from 'next/image'
 import { Autoplay, Pagination } from 'swiper/modules'
 
 const logos: string[] = Array.from(
@@ -79,7 +80,14 @@ const MeetingPage = () => {
                 {logos.map((item, index) => (
                   <SwiperSlide key={index}>
                     <div className="transform transition-transform duration-300 hover:scale-110 opacity-60 hover:opacity-100">
-                      <img src={item} alt={`Logo ${index}`} />
+                      <Image
+                        src={item}
+                        alt={`Logo ${index}`}
+                        width={409}
+                        height={150}
+                        unoptimized
+                        loader={({ src }) => `${src}`}
+                      />
                     </div>
                   </SwiperSlide>
                 ))}
