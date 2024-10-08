@@ -19,8 +19,8 @@
     "@tailwindcss/typography": "^0.5.9",
     "classnames": "^2.3.2",
     "disqus-react": "^1.1.5",
-    "eslint": "^9.12.0",
-    "eslint-config-next": "^14.2.14",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15",
     "gray-matter": "^4.0.3",
     "jalali-moment": "^3.3.11",
     "keen-slider": "^6.8.5",
@@ -45,6 +45,8 @@
     "vazirmatn": "^33.0.3"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.12.0",
     "@types/node": "22.7.4",
     "@types/nprogress": "^0.2.0",
     "@types/react": "18.3.11",
