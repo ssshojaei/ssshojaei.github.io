@@ -1,79 +1,81 @@
-name: Build & Deploy Frontend
+name: Deploy Next.js site to Pages
+
 on:
   push:
-    branches:
-      - main # Adjust branch name as needed
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '21.1.0' # Replace with your Node.js version
+          node-version: "20"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: next
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
 
       - name: Install dependencies
-        run: npm install
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Build the project
-        run: npm run build
+      - name: Export static site
+        run: ${{ steps.detect-package-manager.outputs.runner }} next export
 
-      - name: Deploy to Server
-        uses: appleboy/ssh-action@master # Use latest version
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }} # Ensure SSH_PORT is correctly set in secrets
-          script: |
-            export GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no"
+          path: ./out
 
-            # Create the project directory if it doesn't exist
-            PROJECT_DIR=~/frontend-app
-
-            if [ ! -d "$PROJECT_DIR" ]; then
-              mkdir -p $PROJECT_DIR
-            fi
-
-            # Go into the directory
-            cd $PROJECT_DIR
-
-            # if there is no deployment there, clone the repository, but if there is, pull latest changes
-            if [ ! -d ".git" ]; then
-              git clone --branch main git@github.com:username/frontend-project.git .
-            else
-              git pull origin main
-            fi
-
-            # Install Node.js and npm if not already installed
-            if ! command -v node &> /dev/null; then
-              curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-              sudo apt-get install -y nodejs
-            fi
-
-            if ! command -v npm &> /dev/null; then
-              sudo apt-get install -y npm
-            fi
-
-            # This part is optional to remove node_modules and install it each time
-            rm -rf node_modules package-lock.json
-            npm cache clean --force
-            npm install
-            npm run build
-
-            # Use pm2 or serve to start your Next.js or React.js application
-            # Example for Next.js
-            # npm install -g pm2
-            # pm2 start npm --name "next-app" -- start
-            # pm2 save
-
-            # Example for React.js (if using serve)
-            # npm install -g serve
-            # serve -s build
-
-            echo 'Deployment successful'
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
