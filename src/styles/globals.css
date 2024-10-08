@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('./meeting-swiper.css');
+
 /*Custom Styles Here*/
 body * {
   @apply transition-colors duration-200;

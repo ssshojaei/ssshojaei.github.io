@@ -26,13 +26,13 @@ const primaryMenu = [
 
 const secondaryMenu = [
   {
-    label: 'لینکدین',
-    href: 'https://www.linkedin.com/in/ordinarysaleh/',
-    external: true
+    label: 'مشاوره رزومه',
+    href: '/meeting',
+    external: false
   },
   {
-    label: 'رزومه',
-    href: '/resume.pdf',
+    label: 'لینکدین',
+    href: 'https://www.linkedin.com/in/ordinarysaleh/',
     external: true
   },
   {

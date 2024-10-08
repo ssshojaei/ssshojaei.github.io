@@ -1,0 +1,22 @@
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #d9d9d9 !important;
+}
+.swiper-pagination-progressbar {
+  background: #efefef !important;
+}
+.swiper-horizontal > .swiper-pagination-progressbar,
+.swiper-pagination-progressbar.swiper-pagination-horizontal,
+.swiper-vertical
+  > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite,
+.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite {
+  width: 200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0;
+  right: 0;
+  top: unset !important;
+  border-radius: 4px !important;
+  overflow: hidden;
+}

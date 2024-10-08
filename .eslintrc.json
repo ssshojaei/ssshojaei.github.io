@@ -1,7 +1,24 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/jsx-no-target-blank": [2, { "allowReferrer": true }],
-    "react/display-name": [0, { "ignoreTranspilerName": false }]
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/prop-types": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
