@@ -1,3 +1,1 @@
-export const myLoader = ({ src }: { src: string }) => {
-  return src
-}
+export const myLoader = ({ src }: { src: string }) => src
