@@ -14,12 +14,14 @@ const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   output: 'export',
   distDir: 'out',
+  trailingSlash: true,
   basePath: isProd ? '/ssshojaei.github.io' : '',
   assetPrefix: isProd ? '/ssshojaei.github.io/' : '',
   reactStrictMode: true,
-  output: 'standalone',
-  // Configure pageExtensions to include md and mdx
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx']
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  images: {
+    unoptimized: true
+  }
   // Optionally, add any other Next.js config below
 }
 

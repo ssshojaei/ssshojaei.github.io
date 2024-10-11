@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "yarn build && gh-pages -d out"
+    "deploy": "export NODE_ENV=production && npm run build && npx gh-pages -d out"
   },
   "homepage": "https://github.com/ssshojaei/ssshojaei.github.io",
   "dependencies": {
