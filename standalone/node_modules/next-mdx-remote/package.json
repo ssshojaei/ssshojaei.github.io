@@ -1,0 +1,88 @@
+{
+  "name": "next-mdx-remote",
+  "description": "utilities for loading mdx from any remote source as data, rather than as a local import",
+  "version": "5.0.0",
+  "author": "Jeff Escalante",
+  "bugs": {
+    "url": "https://github.com/hashicorp/next-mdx-remote/issues"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./serialize": "./serialize.js",
+    "./rsc": "./rsc.js",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "@babel/code-frame": "^7.23.5",
+    "@mdx-js/mdx": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "unist-util-remove": "^3.1.0",
+    "vfile": "^6.0.1",
+    "vfile-matter": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.1",
+    "@hashicorp/remark-plugins": "^3.2.1",
+    "@types/babel__code-frame": "^7.0.3",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/node": "^18.11.9",
+    "@types/puppeteer": "^5.4.4",
+    "@types/react": "^18.2.65",
+    "@types/react-dom": "^18.2.22",
+    "@types/rmfr": "^2.0.1",
+    "@types/serve-handler": "^6.1.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cross-spawn": "^7.0.3",
+    "husky": "^4.3.6",
+    "next": "^13.1.2",
+    "prettier": "^2.4.1",
+    "pretty-quick": "^3.1.1",
+    "puppeteer": "^10.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "release": "^6.3.0",
+    "rmfr": "^2.0.0",
+    "serve-handler": "^6.1.3",
+    "tree-kill": "^1.2.2",
+    "typescript": "^5.4.2",
+    "vitest": "^1.3.1"
+  },
+  "homepage": "https://github.com/hashicorp/next-mdx-remote#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "keywords": [
+    "markdown",
+    "mdx",
+    "next",
+    "next.js"
+  ],
+  "license": "MPL-2.0",
+  "engines": {
+    "node": ">=14",
+    "npm": ">=7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hashicorp/next-mdx-remote.git"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && tsc -p .",
+    "lint": "prettier --write \"./**/*.{js,jsx,json}\"",
+    "release": "changeset publish",
+    "release:canary": "npm run build && changeset publish --tag canary",
+    "prepublishOnly": "npm run build",
+    "pretest": "mkdir -p ./dist && npm run build && npm pack --pack-destination ./dist",
+    "test": "npm run test:types && npm run test:js",
+    "test:js": "vitest",
+    "test:types": "tsc -p . --noEmit"
+  },
+  "types": "index.d.ts",
+  "type": "module"
+}
