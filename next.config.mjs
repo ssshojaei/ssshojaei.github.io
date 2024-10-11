@@ -8,7 +8,9 @@ const withMDXConfig = withMDX({
   }
 })
 
-const isProd = process.env.NODE_ENV !== 'dev'
+const isProd = process.env.NODE_ENV !== 'development'
+
+console.log({ isProd, NODE_ENV: process.env.NODE_ENV })
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
