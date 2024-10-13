@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "export NODE_ENV=production && npm run build && npx gh-pages -d out"
+    "deploy": "export NODE_ENV=production && npm run build && touch ./out/.nojekyll && gh-pages -d out -t true"
   },
   "homepage": "https://github.com/ssshojaei/ssshojaei.github.io",
   "dependencies": {
@@ -25,6 +25,7 @@
     "disqus-react": "^1.1.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.15",
+    "framer-motion": "^11.11.8",
     "gh-pages": "^6.2.0",
     "gray-matter": "^4.0.3",
     "jalali-moment": "^3.3.11",
@@ -37,6 +38,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.42.1",
+    "react-use-measure": "^2.1.1",
     "reading-time-estimator": "^1.8.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-code-titles": "^1.2.0",

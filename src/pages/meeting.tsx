@@ -1,18 +1,96 @@
 import Layout from '@/components/Layout/Layout'
+import { animate, motion, useMotionValue } from 'framer-motion'
 import Head from 'next/head'
-import { Swiper, SwiperSlide } from 'swiper/react'
-
-import 'swiper/css'
-import 'swiper/css/autoplay'
-import 'swiper/css/pagination'
-
-import Image from 'next/image'
-import { Autoplay, Pagination } from 'swiper/modules'
+import React from 'react'
+import useMeasure from 'react-use-measure'
 
 const logos: string[] = Array.from(
   { length: 60 },
   (_, index) => `/meeting-images/logo${index + 1}.webp`
 )
+
+const ImagesSlider = () => {
+  const FAST_DURATION = 65
+  const SLOW_DURATION = 155
+
+  const [duration, setDuration] = React.useState(FAST_DURATION)
+  const [ref, { width }] = useMeasure()
+
+  const xTranslation = useMotionValue(0)
+
+  const [mustFinish, setMustFinish] = React.useState(false)
+  const [rerender, setRerender] = React.useState(false)
+
+  React.useEffect(() => {
+    let controls
+    const finalPosition = -width / 2 - 8
+
+    if (mustFinish) {
+      controls = animate(
+        xTranslation,
+        [xTranslation.get(), finalPosition],
+        {
+          ease: 'linear',
+          duration:
+            duration * (1 - xTranslation.get() / finalPosition),
+          onComplete: () => {
+            setMustFinish(false)
+            setRerender(!rerender)
+          }
+        }
+      )
+    } else {
+      controls = animate(xTranslation, [0, finalPosition], {
+        ease: 'linear',
+        duration: duration,
+        repeat: Infinity,
+        repeatType: 'loop',
+        repeatDelay: 0
+      })
+    }
+
+    return controls?.stop
+  }, [rerender, xTranslation, duration, width, mustFinish])
+
+  return (
+    <main className="py-8 relative max-w-full min-h-40 md:h-auto overflow-hidden">
+      <motion.div
+        className="absolute left-0 flex gap-4"
+        style={{ x: xTranslation }}
+        ref={ref}
+        onHoverStart={() => {
+          setMustFinish(true)
+          setDuration(SLOW_DURATION)
+        }}
+        onHoverEnd={() => {
+          setMustFinish(true)
+          setDuration(FAST_DURATION)
+        }}
+        // Adding touch events for mobile devices
+        onTouchStart={() => {
+          setMustFinish(true)
+          setDuration(SLOW_DURATION)
+        }}
+        onTouchEnd={() => {
+          setMustFinish(true)
+          setDuration(FAST_DURATION)
+        }}>
+        {[...logos, ...logos].map((item, idx) => (
+          <div
+            key={idx}
+            className="w-auto h-40 min-w-[20rem] sm:min-w-[24rem] sm:h-36 md:min-w-[28rem] md:h-40 lg:h-32">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={item}
+              alt="logo"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        ))}
+      </motion.div>
+    </main>
+  )
+}
 
 const MeetingPage = () => {
   return (
@@ -52,46 +130,8 @@ const MeetingPage = () => {
       <main>
         <Layout>
           <div className="container px-8 mx-auto xl:px-5 max-w-screen-lg py-5 lg:py-8">
-            <div className="mb-5">
-              <Swiper
-                breakpoints={{
-                  640: {
-                    // For screens larger than 640px (small devices)
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                  },
-                  768: {
-                    // For screens larger than 768px (tablets and above)
-                    slidesPerView: 3,
-                    spaceBetween: 20
-                  }
-                }}
-                slidesPerView={1}
-                autoplay={{
-                  delay: 150,
-                  pauseOnMouseEnter: true
-                }}
-                pagination={{
-                  dynamicBullets: true,
-                  type: 'progressbar'
-                }}
-                modules={[Autoplay, Pagination]}
-                loop>
-                {logos.map((item, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="transform transition-transform duration-300 hover:scale-110 opacity-60 hover:opacity-100">
-                      <Image
-                        src={item}
-                        alt={`Logo ${index}`}
-                        width={409}
-                        height={150}
-                        unoptimized
-                        loader={({ src }) => `${src}`}
-                      />
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+            <div className="mb-5 md:mb-24">
+              <ImagesSlider />
             </div>
             <div className="w-full max-w-lg mx-auto">
               <h1 className="text-xl font-semibold mt-12 mb-6">

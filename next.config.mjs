@@ -8,17 +8,12 @@ const withMDXConfig = withMDX({
   }
 })
 
-const isProd = process.env.NODE_ENV !== 'development'
-
-console.log({ isProd, NODE_ENV: process.env.NODE_ENV })
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
   distDir: 'out',
-  trailingSlash: true,
-  basePath: isProd ? '/ssshojaei.github.io' : '',
-  assetPrefix: isProd ? '/ssshojaei.github.io/' : '',
+  basePath: '',
+  assetPrefix: '',
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   images: {
