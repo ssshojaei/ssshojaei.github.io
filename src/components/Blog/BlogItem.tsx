@@ -39,15 +39,19 @@ const BlogItem = ({
       <div>
         <div>
           <div className="flex gap-3">
-            {tags?.map(category => (
-              <Link
-                key={`category-${category}`}
-                href={`/categories/${category}`}>
-                <span className="inline-block text-xs font-medium tracking-wider mt-5 text-blue-600 dark:text-blue-300">
-                  {categoriesList[category as TCategory].title}
-                </span>
-              </Link>
-            ))}
+            {tags?.map(category => {
+              const categoryInfo = categoriesList[category as TCategory]
+              if (!categoryInfo) return null
+              return (
+                <Link
+                  key={`category-${category}`}
+                  href={`/categories/${category}`}>
+                  <span className="inline-block text-xs font-medium tracking-wider mt-5 text-blue-600 dark:text-blue-300">
+                    {categoryInfo.title}
+                  </span>
+                </Link>
+              )
+            })}
           </div>
           <h2 className="text-lg font-semibold leading-snug tracking-tight mt-2 dark:text-white text-gray-700">
             <Link href={`/posts/${slug}`}>

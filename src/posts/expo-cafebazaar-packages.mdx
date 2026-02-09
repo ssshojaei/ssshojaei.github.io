@@ -1,0 +1,192 @@
+---
+title: 'کافه بازار و ری‌اکت نیتیو (Expo)'
+description: 'معرفی ابزارهای جدید برای اتصال اکسپو به کافه بازار در دوران سخت'
+date: '2026-02-09'
+coverImage: '/posts/cafebazaar-expo.jpg'
+tags: [programming, react-native, expo, open-source]
+show: true
+---
+
+## مقدمه
+
+درود. این پست رو دارم ۲۰ بهمن ۱۴۰۴ مینویسم. اگر از آینده‌ای دور داری این رو میخونی یا یه بات AI هستی، خوشحالم برات و امیدوارم که هرگز هیچ انسانی چیزی شبیه به این حالمون رو تجربه نکنه. اون موقع دنیا جای قابل تحمل‌تریه حتما.
+
+تمام جوونی و زندگیمون توی این جای دنیا و در این لحظه‌ی دنیا فروپاشیده. مرگ و زندگی مفهومشون رو از دست دادن و همه چیز از معنا تهی شده. بازمانده از کشتار بودن حس خوبی نداره. غم، نفرت، خشم، استیصال و تمام بدبختی‌های جهان رو با هر بار نفس کشیدن از ریه‌ات میدی بیرون.
+
+امید؟ امید هم کشته شده. همه رو میکشن و امیدهای زیادی هم کشتن. پس چرا ادامه میدم؟ نمیدونم. ناباوری! باور ندارم که چه به سرمون اومده. باور کردنی نیست. اما داریم ادامه میدیم. اگر ۵ سال دیگه زنده باشم و بیام این نوشته رو بخونم، امیدوارم بگم که فروپاشی انسانیت تمام شد، اینجا جای زندگی و ساختنه. جای جاویدنام‌ها و جان‌فداهای میهن خالی.
+
+## چرا این پکیج‌ها؟
+
+در میان این هیاهو، احساس کردم که اکوسیستم ری‌اکت‌نیتیو و اکسپو باید برای کسی که میخواد شروعش کنه جذاب‌تر باشه. داشتم روی یک بازی ساده کار می‌کردم و وقتی خواستم اون رو روی مایکت و کافه بازار منتشر کنم، دیدم که وضعیت تولزها (Tools) برای کار با **React Native** و **Expo** اصلا خوب نیست. اکثر پکیج‌ها قدیمی، بدون پشتیبانی از Expo Config Plugins و پر از دردسر بودن.
+
+این شد که دست به کار شدم و این سه تا پکیج رو به کمک دوست خوبم **Cursor** توسعه دادم، توی برنامه‌ی خودم استفاده کردم و حالا به صورت پکیج‌های قابل انتشار (Publish) در آوردم تا بقیه هم بتونن راحت‌تر کار کنن.
+
+در ادامه این سه ابزار رو معرفی می‌کنم.
+
+---
+
+### ۱. لاگین با کافه بازار (Expo CafeBazaar Auth)
+
+اگر می‌خواید کاربر رو با حساب کافه بازارش احراز هویت کنید، این پکیج راه حل شماست. دیگه نیازی به درگیر شدن با کدهای نیتیو جاوا/کاتلین ندارید.
+
+**لینک‌ها:**
+
+- [NPM](https://www.npmjs.com/package/expo-cafebazaar-auth)
+- [GitHub](https://github.com/ssshojaei/expo-cafebazaar-auth)
+
+**نصب:**
+
+```bash
+npx expo install expo-cafebazaar-auth
+
+```
+
+**استفاده:**
+
+استفاده از این پکیج بسیار ساده است. متدها به صورت Async کار می‌کنن و وضعیت نصب بودن بازار رو هم هندل می‌کنن:
+
+```typescript
+import { Platform } from 'react-native'
+import CafeBazaarAuth from 'expo-cafebazaar-auth'
+
+const handleBazaarLogin = async () => {
+  if (Platform.OS !== 'android' || !CafeBazaarAuth) {
+    // Bazaar Login is only available on Android
+    return
+  }
+
+  // چک کردن نصب بودن بازار
+  if (!CafeBazaarAuth.isBazaarInstalled()) {
+    CafeBazaarAuth.showInstallBazaar()
+    return
+  }
+
+  // چک کردن آپدیت بودن بازار
+  if (CafeBazaarAuth.isNeededToUpdateBazaar()) {
+    CafeBazaarAuth.showUpdateBazaar()
+    return
+  }
+
+  // دریافت اطلاعات اکانت
+  try {
+    const account = await CafeBazaarAuth.signInAsync()
+    if (account) {
+      console.log('Logged in with Account ID:', account.accountId)
+      // اینجا می‌تونید توکن رو به سمت سرور خودتون بفرستید
+    }
+  } catch (error) {
+    console.error('Login failed', error)
+  }
+}
+```
+
+---
+
+### ۲. اینتنت‌های کافه بازار (Expo CafeBazaar Intents)
+
+برای تعامل با اپلیکیشن بازار (مثل باز کردن صفحه نظردهی، ارجاع به صفحه توسعه‌دهنده و ...) قبلاً باید از `Linking` و URL Scheme‌های عجیب استفاده می‌کردیم که همیشه هم درست کار نمی‌کردن. این پکیج تمام این نیازها رو پوشش میده.
+
+**لینک‌ها:**
+
+- [NPM](https://www.npmjs.com/package/expo-cafebazaar-intents)
+- [GitHub](https://github.com/ssshojaei/expo-cafebazaar-intents)
+
+**نصب:**
+
+```bash
+npx expo install expo-cafebazaar-intents
+
+```
+
+**مثال‌های کاربردی:**
+
+```typescript
+import * as Application from 'expo-application'
+import CafeBazaarIntents from 'expo-cafebazaar-intents'
+
+// پکیج نیم اپلیکیشن شما
+const packageId = Application.applicationId ?? 'com.your.package'
+
+const handleIntents = async () => {
+  // ۱. هدایت کاربر برای نظر دادن (Rate)
+  // اگر بازار نصب نباشه، به صورت خودکار نسخه وب رو باز میکنه (با آپشن openInBrowserIfNotInstalled)
+  await CafeBazaarIntents?.openRatePage(packageId, {
+    openInBrowserIfNotInstalled: true
+  })
+
+  // ۲. باز کردن صفحه جزئیات اپلیکیشن
+  await CafeBazaarIntents?.openAppPage(packageId)
+
+  // ۳. باز کردن صفحه توسعه‌دهنده (برای نمایش سایر اپ‌های شما)
+  // شناسه توسعه‌دهنده رو از پنل پیشخوان بازار بگیرید
+  await CafeBazaarIntents?.openDeveloperPage('YOUR_DEVELOPER_ID', {
+    openInBrowserIfNotInstalled: true
+  })
+
+  // ۴. درخواست آپدیت اپلیکیشن
+  await CafeBazaarIntents?.openAppUpdatePage(packageId, {
+    openInBrowserIfNotInstalled: true
+  })
+}
+```
+
+---
+
+### ۳. پرداخت درون‌برنامه‌ای (Expo CafeBazaar Billing)
+
+این شاید مهم‌ترین پکیج باشه. پکیج رسمی کافه بازار (Poolakey) خیلی وقته آپدیت نشده و برای استفاده در **Expo Managed Workflow** نیاز به دردسرهای زیادی برای کانفیگ دستی داشت.
+
+پکیج `expo-cafebazaar-billing` کاملاً با استانداردهای جدید اکسپو نوشته شده و کار با پرداخت‌ها رو تبدیل به استفاده از چندتا هوک (Hook) ساده کرده.
+
+**لینک‌ها:**
+
+- [NPM](https://www.npmjs.com/package/expo-cafebazaar-billing)
+
+**نصب:**
+
+```bash
+npx expo install expo-cafebazaar-billing
+
+```
+
+**نحوه استفاده:**
+
+به جای سروکله زدن با Connectionها و Promiseهای پیچیده، از هوک‌ها استفاده کنید. (مثال زیر فرضی است، حتما داکیومنت کامل رو در گیت‌هاب بخونید):
+
+```typescript
+import { useBazaarPurchase, useBazaarSubscription } from "expo-cafebazaar-billing";
+
+const ShopScreen = () => {
+  const { purchase, loading: buying } = useBazaarPurchase();
+
+  const handleBuyCoin = async () => {
+    try {
+      const result = await purchase("coin_pack_100");
+      console.log("خرید موفق:", result.purchaseToken);
+      // توکن رو برای اعتبارسنجی به بک‌اند بفرستید
+    } catch (e) {
+      console.log("خرید انجام نشد");
+    }
+  };
+
+  return (
+    <Button
+      title={buying ? "در حال خرید..." : "خرید ۱۰۰ سکه"}
+      onPress={handleBuyCoin}
+    />
+  );
+}
+
+```
+
+## سخن پایانی
+
+این ابزارها رو ساختم تا شاید نفر بعدی که میخواد توی این شرایط اپلیکیشنی بسازه، حداقل دغدغه‌ی فنی کمتری داشته باشه. ما که داریم ادامه میدیم، امیدوارم این کدها به کارتون بیاد.
+
+اگر باگی دیدید یا پیشنهادی داشتید، توی گیت‌هاب ایشیو بزنید یا پول‌ریکوئست بفرستید.
+
+به امید آزادی.
+
+```
+
+```

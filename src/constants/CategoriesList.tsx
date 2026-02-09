@@ -5,6 +5,8 @@ export type TCategory =
   | 'introduce'
   | 'programming'
   | 'work'
+  | 'expo'
+  | 'react-native'
 
 export type TCategoryList = {
   [key in TCategory]: {
@@ -39,7 +41,15 @@ const categoriesList: TCategoryList = {
     subtitle:
       'نکات و آموزش‌های ساده و پیشرفته درمورد برنامه نویسی، بیشتر هم جاوااسکریپت!'
   },
-  work: { title: 'کار', subtitle: 'هرچیزی درمورد کار و محیط کاری' }
+  work: { title: 'کار', subtitle: 'هرچیزی درمورد کار و محیط کاری' },
+  expo: {
+    title: 'اکسپو',
+    subtitle: 'Expo و توسعه اپ موبایل'
+  },
+  'react-native': {
+    title: 'ری‌اکت نیتیو',
+    subtitle: 'React Native و اپ‌های کراس‌پلتفرم'
+  }
 }
 
 export default categoriesList

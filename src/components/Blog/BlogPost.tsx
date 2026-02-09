@@ -39,15 +39,19 @@ const BlogPost = ({ post }: TBlogPostProps) => {
         <div className="max-w-screen-md mx-auto ">
           <div className="flex justify-center">
             <div className="flex gap-3">
-              {post?.tags?.map(category => (
-                <Link
-                  key={`category-${category}`}
-                  href={`/categories/${category}`}>
-                  <span className="inline-block text-xs font-medium tracking-wider mt-5 text-blue-700">
-                    {categoriesList[category as TCategory].title}
-                  </span>
-                </Link>
-              ))}
+              {post?.tags?.map(category => {
+                const categoryInfo = categoriesList[category as TCategory]
+                if (!categoryInfo) return null
+                return (
+                  <Link
+                    key={`category-${category}`}
+                    href={`/categories/${category}`}>
+                    <span className="inline-block text-xs font-medium tracking-wider mt-5 text-blue-700">
+                      {categoryInfo.title}
+                    </span>
+                  </Link>
+                )
+              })}
             </div>
           </div>
           <h1 className="mt-2 mb-3 text-3xl font-semibold tracking-tight text-center lg:leading-snug text-brand-primary lg:text-4xl dark:text-white">

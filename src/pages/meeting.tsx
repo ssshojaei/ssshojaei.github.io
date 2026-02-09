@@ -1,96 +1,6 @@
 import Layout from '@/components/Layout/Layout'
-import { animate, motion, useMotionValue } from 'framer-motion'
+import { ImagesSlider } from '@/components/Meeting/ImagesSlider'
 import Head from 'next/head'
-import React from 'react'
-import useMeasure from 'react-use-measure'
-
-const logos: string[] = Array.from(
-  { length: 60 },
-  (_, index) => `/meeting-images/logo${index + 1}.webp`
-)
-
-const ImagesSlider = () => {
-  const FAST_DURATION = 65
-  const SLOW_DURATION = 155
-
-  const [duration, setDuration] = React.useState(FAST_DURATION)
-  const [ref, { width }] = useMeasure()
-
-  const xTranslation = useMotionValue(0)
-
-  const [mustFinish, setMustFinish] = React.useState(false)
-  const [rerender, setRerender] = React.useState(false)
-
-  React.useEffect(() => {
-    let controls
-    const finalPosition = -width / 2 - 8
-
-    if (mustFinish) {
-      controls = animate(
-        xTranslation,
-        [xTranslation.get(), finalPosition],
-        {
-          ease: 'linear',
-          duration:
-            duration * (1 - xTranslation.get() / finalPosition),
-          onComplete: () => {
-            setMustFinish(false)
-            setRerender(!rerender)
-          }
-        }
-      )
-    } else {
-      controls = animate(xTranslation, [0, finalPosition], {
-        ease: 'linear',
-        duration: duration,
-        repeat: Infinity,
-        repeatType: 'loop',
-        repeatDelay: 0
-      })
-    }
-
-    return controls?.stop
-  }, [rerender, xTranslation, duration, width, mustFinish])
-
-  return (
-    <main className="py-8 relative max-w-full min-h-40 md:h-auto overflow-hidden">
-      <motion.div
-        className="absolute left-0 flex gap-4"
-        style={{ x: xTranslation }}
-        ref={ref}
-        onHoverStart={() => {
-          setMustFinish(true)
-          setDuration(SLOW_DURATION)
-        }}
-        onHoverEnd={() => {
-          setMustFinish(true)
-          setDuration(FAST_DURATION)
-        }}
-        // Adding touch events for mobile devices
-        onTouchStart={() => {
-          setMustFinish(true)
-          setDuration(SLOW_DURATION)
-        }}
-        onTouchEnd={() => {
-          setMustFinish(true)
-          setDuration(FAST_DURATION)
-        }}>
-        {[...logos, ...logos].map((item, idx) => (
-          <div
-            key={idx}
-            className="w-auto h-40 min-w-[20rem] sm:min-w-[24rem] sm:h-36 md:min-w-[28rem] md:h-40 lg:h-32">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={item}
-              alt="logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        ))}
-      </motion.div>
-    </main>
-  )
-}
 
 const MeetingPage = () => {
   return (
@@ -168,8 +78,8 @@ const MeetingPage = () => {
                   <li>راهنمایی برای اپلای به شرکت‌های معتبر</li>
                   <p>
                     اگه آماده‌ای که رزومه‌ات رو به سطح بالاتری ببری و
-                    شانست برای مصاحبه‌ها رو بیشتر کنی، همین حالا یه
-                    جلسه رزرو کن!
+                    شانست برای مصاحبه‌ها رو بیشتر کنی، خیلی خوشحال
+                    می‌شم که کمکت کنم.
                   </p>
                 </ul>
                 <p>
@@ -183,10 +93,10 @@ const MeetingPage = () => {
                   target="_blank"
                   rel="noreferrer"
                   className="relative inline-block group">
-                  <span className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-600 dark:from-blue-700 dark:to-indigo-900 text-2xl font-extrabold tracking-tight transition-all duration-500 ease-in-out group-hover:opacity-0">
+                  <span className="absolute inset-0 bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-700 dark:from-blue-300 dark:to-purple-600 text-2xl font-extrabold tracking-tight transition-all duration-500 ease-in-out group-hover:opacity-0 text-transparent dark:text-white">
                     رزرو جلسه مشاوره
                   </span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-400 dark:from-indigo-900 dark:to-blue-700 text-2xl font-extrabold tracking-tight transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
+                  <span className="bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-500 dark:from-purple-600 dark:to-blue-300 text-2xl font-extrabold tracking-tight transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100 text-transparent dark:text-white">
                     رزرو جلسه مشاوره
                   </span>
                 </a>
